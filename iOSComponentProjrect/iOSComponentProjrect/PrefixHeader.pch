@@ -1,0 +1,146 @@
+//
+//  PrefixHeader.pch
+//  iOSComponentProjrect
+//
+//  Created by 帅棋 on 2018/11/21.
+//  Copyright © 2018年 WG. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#pragma mark ----------------------------- 屏幕、设备、系统信息
+#define ScreenWidth   [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+#define  iPhone4      ([[UIScreen mainScreen] bounds].size.height==480)
+#define  iPhone5      ([[UIScreen mainScreen] bounds].size.height==568)
+#define  iPhone4_5    (iPhone4 || iPhone5)
+#define  iPhone6      ([[UIScreen mainScreen] bounds].size.height==667)
+#define  iPhone6plus  ([[UIScreen mainScreen] bounds].size.height==736)
+#define  iPhonePlus_X ([[UIScreen mainScreen] bounds].size.width==414)
+#define  iPhoneX       (CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size))
+#define  iPhoneXR      (CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size))
+#define  iPhone_Xs_Max (CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size))
+#define  iPad         ([[UIDevice currentDevice].model isEqualToString:@"iPad"])
+
+#define SystemVersion [[UIDevice  currentDevice] systemVersion] //设备版本
+#define SystemModel   [[UIDevice currentDevice] model] //设备模式
+#define BundleVersion [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"] //当前app版本
+#define BundleName    [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleDisplayName"]
+#define CurrentLanguage [[NSLocale preferredLanguages] objectAtIndex:0]//当前系统语言
+
+#define RequestSuccess(a)  [[NSString stringWithFormat:@"%@",a[@"status"]] isEqualToString:@"1"]
+#define StringEqual(a, b)  [[NSString stringWithFormat:@"%@",a] isEqualToString:b]
+#define String(a)          [NSString stringWithFormat:@"%@",a]
+
+
+#pragma mark -----------------------------
+#pragma mark ----------------------------- 提示控件
+/*! 提示 */
+#define WAITING         [SVProgressHUD showWithStatus:@"请稍后..."];
+#define DISMISS         [SVProgressHUD dismiss];
+#define ERROR(a)        [SVProgressHUD showErrorWithStatus:a];
+#define ERRORWith(a)    [SVProgressHUD showErrorWithStatus:a];[SVProgressHUD dismissWithDelay:1.f];
+#define INFO(a)         [SVProgressHUD showInfoWithStatus:a];
+#define INFOWith(a)     [SVProgressHUD showInfoWithStatus:a];[SVProgressHUD dismissWithDelay:1.f];
+#define SUCCESS(a)      [SVProgressHUD showSuccessWithStatus:a];[SVProgressHUD dismissWithDelay:.6];
+/*! 颜色、高度 */
+#define BASEColor        RGB(73,139,251) //#498BFB
+#define BackColor        RGB(240,240,240)//背景色
+#define TitleColor       RGB(51, 51, 51)
+#define MarkTitleColor   RGB(102, 102, 102)
+#define LightTitleColor  UIColorFromRGB(0x999999)
+#define markColor        UIColorFromRGB(0xeeeeee)
+#define HongSe           RGB(255,58,50)
+#define BaiSe            RGB(254,254,254)
+
+#define iPhoneXAll (iPhoneX || iPhoneXR || iPhone_Xs_Max)
+#define NavHeight        (iPhoneXAll ? 84.0 : (iPad?90.0:64.0))
+#define TabHeight        (iPhoneXAll ? 83.0 : 49.0)
+#define BottomHeight     (iPhone4_5?55:(iPhone6?60:65))
+#define StatusBarHeight  (iPhoneXAll? 44.0 : 20.0)
+
+
+#pragma mark -----------------------------
+#pragma mark ----------------------------- 字体/颜色
+/*! 正常 */
+#define FONT(a)          [UIFont fontWithName:@"PingFangSC-Regular" size:a]
+/*! 半黑 */
+#define BoldFONT(a)      [UIFont fontWithName:@"PingFangSC-Semibold" size:a]
+/*! rgb颜色 */
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define RGB(r,g,b)       [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:1.0]
+/*! 16进制颜色 */
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >>  8))/255.0 \
+blue:((float)((rgbValue & 0x0000FF) >>  0))/255.0 \
+alpha:1.0]
+
+
+#pragma mark -----------------------------
+#pragma mark ----------------------------- view圆角、边框
+#define WGViewBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]];
+
+
+#pragma mark -----------------------------
+#pragma mark ----------------------------- 强、弱引用宏
+/*! 弱引用宏 */
+#define WeakObj(o)       try{}@finally{} __weak typeof(o) o##Weak = o;
+
+#define WeakSelf @weakify(self);
+#define StrongSelf @strongify(self);
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) strong##_##object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) block##_##object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) strong##_##object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) block##_##object = block##_##object;
+#endif
+#endif
+#endif
+
+#pragma mark -----------------------------
+#pragma mark -----------------------------
+/*! 显示所在类，所在行，方法名，内容,DEBUG时输出，Release时不输出 */
+#ifdef DEBUG
+#define NSLog(format, ...) do { \
+fprintf(stderr,"\n《+++++++++++++++++++ START +++++++++++++++++++++》\n \n所在类：%s \n所在行：%d \n方法名：%s\n\n", \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], \
+__LINE__, __func__); \
+(NSLog)((format), ##__VA_ARGS__); \
+fprintf(stderr,"\n《-------------------  END  ---------------------》\n \n"); \
+} while (0)
+#else
+#define NSLog(...)
+#define debugMethod()
+#endif
+
+
+#endif /* PrefixHeader_pch */
