@@ -37,22 +37,11 @@
 #pragma mark -----------------------------
 #pragma mark ----------------------------- 提示控件
 /*! 提示 */
-#define WAITING         [SVProgressHUD showWithStatus:@"请稍后..."];
-#define DISMISS         [SVProgressHUD dismiss];
-#define ERROR(a)        [SVProgressHUD showErrorWithStatus:a];
-#define ERRORWith(a)    [SVProgressHUD showErrorWithStatus:a];[SVProgressHUD dismissWithDelay:1.f];
-#define INFO(a)         [SVProgressHUD showInfoWithStatus:a];
-#define INFOWith(a)     [SVProgressHUD showInfoWithStatus:a];[SVProgressHUD dismissWithDelay:1.f];
-#define SUCCESS(a)      [SVProgressHUD showSuccessWithStatus:a];[SVProgressHUD dismissWithDelay:.6];
-/*! 颜色、高度 */
-#define BASEColor        RGB(73,139,251) //#498BFB
-#define BackColor        RGB(240,240,240)//背景色
-#define TitleColor       RGB(51, 51, 51)
-#define MarkTitleColor   RGB(102, 102, 102)
-#define LightTitleColor  UIColorFromRGB(0x999999)
-#define markColor        UIColorFromRGB(0xeeeeee)
-#define HongSe           RGB(255,58,50)
-#define BaiSe            RGB(254,254,254)
+#define WAITING         [MBProgressHUD showMessage:@"请稍后..."];
+#define DISMISS         [MBProgressHUD hideHUD];
+#define ERRORWith(a)    [MBProgressHUD showError:a];
+#define INFOWith(a)     [MBProgressHUD showInfo:a];
+#define SUCCESS(a)      [MBProgressHUD showSuccess:a];
 
 #define iPhoneXAll (iPhoneX || iPhoneXR || iPhone_Xs_Max)
 #define NavHeight        (iPhoneXAll ? 84.0 : (iPad?90.0:64.0))
@@ -63,6 +52,14 @@
 
 #pragma mark -----------------------------
 #pragma mark ----------------------------- 字体/颜色
+
+#define TitleColor       RGB(51, 51, 51)
+#define MarkTitleColor   RGB(102, 102, 102)
+#define BASEColor        RGB(73,139,251) //#498BFB
+#define BackColor        RGB(240,240,240)//背景色
+#define HongSe           RGB(255,58,50)
+#define BaiSe            RGB(254,254,254)
+
 /*! 正常 */
 #define FONT(a)          [UIFont fontWithName:@"PingFangSC-Regular" size:a]
 /*! 半黑 */
@@ -127,7 +124,7 @@ alpha:1.0]
 #endif
 
 #pragma mark -----------------------------
-#pragma mark -----------------------------
+#pragma mark ----------------------------- NSLog
 /*! 显示所在类，所在行，方法名，内容,DEBUG时输出，Release时不输出 */
 #ifdef DEBUG
 #define NSLog(format, ...) do { \

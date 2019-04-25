@@ -1,0 +1,23 @@
+//
+//  RectManager.h
+//
+//  Created by 帅棋 on 2019/3/28.
+//  Copyright © 2019 WG. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface RectManager : UIView
+
+
+@property (nonatomic, assign)CGRect subRect;
+
++ (CGRect)getEffectImageRect:(CGSize)size;
++ (CGRect)getGuideFrame:(CGRect)rect;
+
++ (int)docode:(unsigned char *)pbBuf len:(int)tLen;
++ (CGRect)getCorpCardRect:(int)width  height:(int)height guideRect:(CGRect)guideRect charCount:(int) charCount;
+
++ (char *)getNumbers;
+
+@end
