@@ -23,6 +23,9 @@
 		8F48464921AFD0C70064E21D /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F48464621AFD0C60064E21D /* error@2x.png */; };
 		8F48464A21AFD0C70064E21D /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F48464721AFD0C70064E21D /* error.png */; };
 		8F4F071C224A0B2400F1B3FE /* WGScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F071B224A0B2400F1B3FE /* WGScanViewController.m */; };
+		8F7617BF228044D30099566C /* WGDorpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617BE228044D30099566C /* WGDorpView.m */; };
+		8F7617C2228044E90099566C /* WGDropListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617C1228044E90099566C /* WGDropListCell.m */; };
+		8F7617C5228048A10099566C /* WGHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617C4228048A10099566C /* WGHeaderView.m */; };
 		8F7F9B5E2243976400661DDE /* WGScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F9B5B2243976300661DDE /* WGScanView.m */; };
 		8F7F9B5F2243976400661DDE /* WGNativeScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7F9B5C2243976300661DDE /* WGNativeScanTool.m */; };
 		8F89438521AD46B700666DD8 /* MBProgressHUD+WG.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F89438421AD46B700666DD8 /* MBProgressHUD+WG.m */; };
@@ -42,6 +45,8 @@
 		8F8CE00721ABA51E004B7D1D /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE00621ABA51E004B7D1D /* UIImage+GradientColor.m */; };
 		8F8CE00A21ABA598004B7D1D /* UIImage+WGExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE00921ABA598004B7D1D /* UIImage+WGExpand.m */; };
 		8F8CE00D21ABEC17004B7D1D /* WGGradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE00C21ABEC17004B7D1D /* WGGradientLabel.m */; };
+		8F903B9F227FE41B002B3A1C /* WGAlertViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F903B9E227FE41B002B3A1C /* WGAlertViewVC.m */; };
+		8F903BA3227FE53B002B3A1C /* WGUIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F903BA2227FE53B002B3A1C /* WGUIAlertView.m */; };
 		8F9165502255A2480061E6B5 /* WGGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F91654F2255A2480061E6B5 /* WGGuideView.m */; };
 		8F91E6B3224E1BDC0034E8BE /* WGImageCroppingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F91E6B2224E1BDC0034E8BE /* WGImageCroppingVC.m */; };
 		8F94A7E92251E4F60056142A /* WGSeePhotosVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F94A7E82251E4F60056142A /* WGSeePhotosVC.m */; };
@@ -132,6 +137,12 @@
 		8F48464721AFD0C70064E21D /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		8F4F071A224A0B2400F1B3FE /* WGScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGScanViewController.h; sourceTree = "<group>"; };
 		8F4F071B224A0B2400F1B3FE /* WGScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGScanViewController.m; sourceTree = "<group>"; };
+		8F7617BD228044D30099566C /* WGDorpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGDorpView.h; sourceTree = "<group>"; };
+		8F7617BE228044D30099566C /* WGDorpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGDorpView.m; sourceTree = "<group>"; };
+		8F7617C0228044E90099566C /* WGDropListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGDropListCell.h; sourceTree = "<group>"; };
+		8F7617C1228044E90099566C /* WGDropListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGDropListCell.m; sourceTree = "<group>"; };
+		8F7617C3228048A10099566C /* WGHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGHeaderView.h; sourceTree = "<group>"; };
+		8F7617C4228048A10099566C /* WGHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGHeaderView.m; sourceTree = "<group>"; };
 		8F7F9B5A2243976300661DDE /* WGScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGScanView.h; sourceTree = "<group>"; };
 		8F7F9B5B2243976300661DDE /* WGScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGScanView.m; sourceTree = "<group>"; };
 		8F7F9B5C2243976300661DDE /* WGNativeScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGNativeScanTool.m; sourceTree = "<group>"; };
@@ -169,6 +180,10 @@
 		8F8CE00921ABA598004B7D1D /* UIImage+WGExpand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WGExpand.m"; sourceTree = "<group>"; };
 		8F8CE00B21ABEC17004B7D1D /* WGGradientLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGGradientLabel.h; sourceTree = "<group>"; };
 		8F8CE00C21ABEC17004B7D1D /* WGGradientLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGGradientLabel.m; sourceTree = "<group>"; };
+		8F903B9D227FE41B002B3A1C /* WGAlertViewVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGAlertViewVC.h; sourceTree = "<group>"; };
+		8F903B9E227FE41B002B3A1C /* WGAlertViewVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGAlertViewVC.m; sourceTree = "<group>"; };
+		8F903BA1227FE53B002B3A1C /* WGUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGUIAlertView.h; sourceTree = "<group>"; };
+		8F903BA2227FE53B002B3A1C /* WGUIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGUIAlertView.m; sourceTree = "<group>"; };
 		8F91654E2255A2480061E6B5 /* WGGuideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGGuideView.h; sourceTree = "<group>"; };
 		8F91654F2255A2480061E6B5 /* WGGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGGuideView.m; sourceTree = "<group>"; };
 		8F91E6B1224E1BDC0034E8BE /* WGImageCroppingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGImageCroppingVC.h; sourceTree = "<group>"; };
@@ -321,6 +336,7 @@
 		8F2AA1E32244D65400E49BB3 /* 实例 */ = {
 			isa = PBXGroup;
 			children = (
+				8F903B9C227FE3EE002B3A1C /* AlertView */,
 				8F94A7E62251E3750056142A /* 多图片查看 */,
 				8F91E6B0224E1BB20034E8BE /* 图片裁剪 */,
 				8FDAB911224C781000C38B0E /* 图片多选 */,
@@ -372,6 +388,17 @@
 				8F48463321AF72000064E21D /* WGDataBaseTool.m */,
 			);
 			path = "FMDB封装";
+			sourceTree = "<group>";
+		};
+		8F7617BC228044900099566C /* DorpView */ = {
+			isa = PBXGroup;
+			children = (
+				8F7617BD228044D30099566C /* WGDorpView.h */,
+				8F7617BE228044D30099566C /* WGDorpView.m */,
+				8F7617C0228044E90099566C /* WGDropListCell.h */,
+				8F7617C1228044E90099566C /* WGDropListCell.m */,
+			);
+			path = DorpView;
 			sourceTree = "<group>";
 		};
 		8F7F9B592243974B00661DDE /* 二维码 */ = {
@@ -506,6 +533,24 @@
 			path = "渐变色";
 			sourceTree = "<group>";
 		};
+		8F903B9C227FE3EE002B3A1C /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8F903B9D227FE41B002B3A1C /* WGAlertViewVC.h */,
+				8F903B9E227FE41B002B3A1C /* WGAlertViewVC.m */,
+			);
+			name = AlertView;
+			sourceTree = "<group>";
+		};
+		8F903BA0227FE430002B3A1C /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				8F903BA1227FE53B002B3A1C /* WGUIAlertView.h */,
+				8F903BA2227FE53B002B3A1C /* WGUIAlertView.m */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		8F90EE7222696EA400EA4F40 /* navSearch */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +596,8 @@
 			children = (
 				8F94A7E72251E4F60056142A /* WGSeePhotosVC.h */,
 				8F94A7E82251E4F60056142A /* WGSeePhotosVC.m */,
+				8F7617C3228048A10099566C /* WGHeaderView.h */,
+				8F7617C4228048A10099566C /* WGHeaderView.m */,
 			);
 			name = "多图片查看";
 			sourceTree = "<group>";
@@ -819,6 +866,8 @@
 		8FF86A8921A6AB1000C95EA4 /* 控件 */ = {
 			isa = PBXGroup;
 			children = (
+				8F7617BC228044900099566C /* DorpView */,
+				8F903BA0227FE430002B3A1C /* AlertView */,
 				8F91654D2255A2270061E6B5 /* 引导图 */,
 				8F3878AC2254A2CD00F1A70B /* 动画 */,
 				8FDAB918224CBA5700C38B0E /* 图片任意裁剪 */,
@@ -1042,6 +1091,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA8E33921B0CC0E0099F088 /* AreaSelectionView.m in Sources */,
+				8F7617BF228044D30099566C /* WGDorpView.m in Sources */,
+				8F7617C2228044E90099566C /* WGDropListCell.m in Sources */,
 				8F3878AF2254A2FA00F1A70B /* UIView+WGAnimation.m in Sources */,
 				8F89AF7B21A54C8600A811F9 /* UIView+Extension.m in Sources */,
 				8F91E6B3224E1BDC0034E8BE /* WGImageCroppingVC.m in Sources */,
@@ -1056,6 +1107,7 @@
 				8FA8E37121B12D770099F088 /* ChooseView.m in Sources */,
 				8F89AF6121A54C1800A811F9 /* ViewController.m in Sources */,
 				8FA8E33C21B0CC0E0099F088 /* WGAddressModel.m in Sources */,
+				8F903BA3227FE53B002B3A1C /* WGUIAlertView.m in Sources */,
 				8FDAB904224C6AA000C38B0E /* LHSIDCardScaningView.m in Sources */,
 				8FA8E32721B0CB0E0099F088 /* WGSearchBar.m in Sources */,
 				8FA8E34B21B0E8020099F088 /* UIImage+Tint.m in Sources */,
@@ -1105,8 +1157,10 @@
 				8FA8E36221B113470099F088 /* XHFloatWindowController.m in Sources */,
 				8F89AF5E21A54C1800A811F9 /* AppDelegate.m in Sources */,
 				8FDAB91E224CBA6B00C38B0E /* WGCropImageVC.m in Sources */,
+				8F7617C5228048A10099566C /* WGHeaderView.m in Sources */,
 				8FA8E33B21B0CC0E0099F088 /* WGAddressBtnView.m in Sources */,
 				8FC4A26E2248CE7B00BAD4F5 /* WGQrCodeViewController.m in Sources */,
+				8F903B9F227FE41B002B3A1C /* WGAlertViewVC.m in Sources */,
 				8FF86A8E21A6ABB800C95EA4 /* NSString+WGPinYin.m in Sources */,
 				8FDAB902224C6AA000C38B0E /* RectManager.m in Sources */,
 				8FC4A26A2248CDFC00BAD4F5 /* WGScoreViewController.m in Sources */,

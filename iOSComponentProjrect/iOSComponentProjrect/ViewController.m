@@ -21,6 +21,7 @@
 #import "WGImageCroppingVC.h"
 #import "WGSeePhotosVC.h"
 #import "WGGuideView.h"
+#import "WGAlertViewVC.h"
 
 @interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView * tableView;
@@ -75,7 +76,7 @@
     [self.view addSubview:self.tableView];
     self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x47ae21);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:(UIBarButtonItemStyleDone) target:self action:@selector(outPutView)];
-    self.titleArray = @[@"时间选择",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览"];
+    self.titleArray = @[@"时间选择",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"AlertView"];
     NSString * countNum = [NSString stringWithFormat:@"%ld",(long)self.titleArray.count];
     //tabbar badge
     [self.navigationController.tabBarController.tabBar updateBadge:countNum atIndex:1];
@@ -184,7 +185,8 @@
             break;
         case 10:
         {
-            
+            WGAlertViewVC * alertVC = [[WGAlertViewVC alloc]init];
+            [self toTargetController:(UIViewController *)alertVC];
         }
             break;
             

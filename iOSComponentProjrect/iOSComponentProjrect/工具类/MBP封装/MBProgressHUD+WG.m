@@ -10,7 +10,6 @@
 
 @implementation MBProgressHUD (WG)
 
-
 /**
  *  显示信息
  *
