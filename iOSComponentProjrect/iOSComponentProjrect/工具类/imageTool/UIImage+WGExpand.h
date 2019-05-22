@@ -35,6 +35,9 @@
  */
 + (UIImage *)imageWithColor:(UIColor *)color;
 
+
++ (instancetype)originalImageNamed:(NSString *)imageName;
+
 #pragma mark ---
 #pragma mark ----------------------------------
 /**

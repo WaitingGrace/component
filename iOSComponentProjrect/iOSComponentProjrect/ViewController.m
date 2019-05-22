@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Config.h"
 #import "ChooseView.h"
-#import "UIViewController+NavBarHidden.h"
 #import "UIViewController+Update.h"
 #import "WGScoreViewController.h"
 #import "WGScanViewController.h"
@@ -22,6 +21,11 @@
 #import "WGSeePhotosVC.h"
 #import "WGGuideView.h"
 #import "WGAlertViewVC.h"
+#import "WGPageMenuVC.h"
+#import "WGWebViewVC.h"
+#import "WGScreeningVC.h"
+#import "WGFloatWindow.h"
+#import "WGVideoPlayerVC.h"
 
 @interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView * tableView;
@@ -68,24 +72,49 @@
     NSArray * images = @[@"123",@"233",@"u=2365",@"u=34521",@"u=34946jpg",@"u=186425"];
     [WGGuideView showGudieView:images];
     
-    [self setKeyScrollView:self.tableView scrolOffsetY:60.f options:HYHidenControlOptionTitle];
-    [self setInViewWillAppear];//设置导航栏渐变
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x47ae21);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:(UIBarButtonItemStyleDone) target:self action:@selector(outPutView)];
-    self.titleArray = @[@"时间选择",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"AlertView"];
+    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView",@"PageMenu/brdgeView",@"WKWebView",@"筛选菜单",@"视频播放"];
+    
+#warning mark -===============tabbar badge==适用于原生tabbar==自定义的会有位移
     NSString * countNum = [NSString stringWithFormat:@"%ld",(long)self.titleArray.count];
-    //tabbar badge
-    [self.navigationController.tabBarController.tabBar updateBadge:countNum atIndex:1];
+//    [self.navigationController.tabBarController.tabBar updateBadge:countNum atIndex:1];
     [self.tabBarController.tabBar updateBadge:countNum atIndex:0];
+#warning mark -========= WGFloatWindow 与视频播放器全屏模式冲突，暂未解决
+    // 1.add floating button
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [WGFloatWindow wg_addWindowOnTarget:self onClick:^{
+//            NSLog(@"Floating button clicked!!!");
+//        }];
+//    });
+/*
+     // 2.resize the button after 2 secs
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [WGFloatWindow wg_setWindowSize:100];
+     });
+ 
+     // 3.hide or not test
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [XHFloatWindow wg_setHideWindow:YES];
+     });
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [WGFloatWindow wg_setHideWindow:NO];
+     });
+ 
+     // 4.reset the background image
+     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+         [WGFloatWindow wg_setBackgroundImage:@"default_normal" forState:UIControlStateSelected];
+         [WGFloatWindow wg_setBackgroundImage:@"default_selected" forState:UIControlStateNormal];
+     });
+ */
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self setInViewWillDisappear];
-    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
+//    [WGFloatWindow wg_setHideWindow:YES];
 }
 
 - (void)outPutView{
@@ -106,6 +135,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:nil];
     cell.textLabel.text = self.titleArray[indexPath.row];
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
@@ -132,64 +162,92 @@
             break;
         case 1:
         {
+            [self makeAppointmentTime];
+        }
+            break;
+        case 2:
+        {
             WGPasswordVerificationCodeVC * inputVC = [[WGPasswordVerificationCodeVC alloc]init];
             [self toTargetController:(UIViewController *)inputVC];
         }
             break;
-        case 2:
+        case 3:
         {
             WGScanViewController * qrVc = [[WGScanViewController alloc]init];
             [self toTargetController:(UIViewController *)qrVc];
         }
             break;
-        case 3:
+        case 4:
         {
             [self getNewVersion];
         }
             break;
-        case 4:
+        case 5:
         {
             WGTagButtonVC * tagVC = [[WGTagButtonVC alloc]init];
             [self toTargetController:(UIViewController *)tagVC];
         }
             break;
-        case 5:
+        case 6:
         {
             WGScoreViewController * scoreVC = [[WGScoreViewController alloc]init];
             [self toTargetController:(UIViewController *)scoreVC];
         }
             break;
-        case 6:
+        case 7:
         {
             WGIdentificationVC * idVC = [[WGIdentificationVC alloc]init];
             [self toTargetController:(UIViewController *)idVC];
         }
             break;
-        case 7:
+        case 8:
         {
             WGMoreImageVC * moreVC = [[WGMoreImageVC alloc]init];
             [self toTargetController:(UIViewController *)moreVC];
         }
             break;
-        case 8:
+        case 9:
         {
             WGImageCroppingVC * croppingVC = [[WGImageCroppingVC alloc]init];
             [self toTargetController:(UIViewController *)croppingVC];
         }
             break;
-        case 9:
+        case 10:
         {
             WGSeePhotosVC * seeVC = [[WGSeePhotosVC alloc]init];
             [self toTargetController:(UIViewController *)seeVC];
         }
             break;
-        case 10:
+        case 11:
         {
             WGAlertViewVC * alertVC = [[WGAlertViewVC alloc]init];
             [self toTargetController:(UIViewController *)alertVC];
         }
             break;
-            
+        case 12:
+        {
+            WGPageMenuVC * pageMenuVC = [[WGPageMenuVC alloc]init];
+            [self toTargetController:(UIViewController *)pageMenuVC];
+        }
+            break;
+        case 13:
+        {
+            WGWebViewVC * webVC = [[WGWebViewVC alloc]init];
+            [self toTargetController:(UIViewController *)webVC];
+        }
+            break;
+        case 14:
+        {
+            WGScreeningVC * screeingVC = [[WGScreeningVC alloc]init];
+            [self toTargetController:(UIViewController *)screeingVC];
+        }
+            break;
+        case 15:
+        {
+            WGVideoPlayerVC * playerVC = [[WGVideoPlayerVC alloc]init];
+            [self toTargetController:(UIViewController *)playerVC];
+        }
+            break;
         default:
             break;
     }
@@ -197,6 +255,7 @@
 
 - (void)toTargetController:(UIViewController *)vc{
     self.hidesBottomBarWhenPushed = YES;
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
     [self.navigationController pushViewController:vc animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }
@@ -216,7 +275,18 @@
     datepicker.currentDate = [NSDate date];
     [datepicker show];
 }
-
+/**
+ 时间预约
+ */
+- (void)makeAppointmentTime{
+    WGTimerPicker *picker = [[WGTimerPicker alloc]initWithSuperView:[UIApplication sharedApplication].keyWindow.rootViewController.view WithDays:7 timeInterval:10 BenginTimeDely:30 response:^(NSString *selectedStr) {
+        [WGPromptBoxView popUpPromptBoxWithTitle:@"预约的时间" message:selectedStr action:@"OK"];
+    }];
+    [picker show];
+}
+/**
+ 版本更新
+ */
 - (void)getNewVersion{
     [self detectionOfUpdateVersionWith:NO hint:@"有新版本更新" Version:@"2.0.0"];
 }

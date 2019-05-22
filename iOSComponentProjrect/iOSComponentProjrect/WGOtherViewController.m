@@ -18,7 +18,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = BackColor;
     
-    
 }
 
 /*

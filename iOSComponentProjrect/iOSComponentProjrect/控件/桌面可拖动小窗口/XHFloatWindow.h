@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface XHFloatWindow : NSObject
+@interface WGFloatWindow : NSObject
 
 /* add the floaitng window to the target and the callback block will be excuted when click the button */
 + (void)xh_addWindowOnTarget:(nonnull id)target onClick:(nullable void(^)(void))callback;

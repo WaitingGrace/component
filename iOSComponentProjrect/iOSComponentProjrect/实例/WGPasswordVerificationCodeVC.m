@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BackColor;
-    WGVerCodeInputView *verView = [[WGVerCodeInputView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
+    WGVerCodeInputView *verView = [[WGVerCodeInputView alloc]initWithFrame:CGRectMake(40, 0, ScreenWidth-80, 50)];
     verView.maxLenght = 6;//最大长度
     verView.keyBoardType = UIKeyboardTypeNumberPad;
     [verView mq_verCodeViewWithMaxLenght];

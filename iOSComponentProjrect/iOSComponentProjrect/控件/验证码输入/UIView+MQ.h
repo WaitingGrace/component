@@ -20,8 +20,8 @@
 /** 边框颜色*/
 @property (nonatomic, strong) IBInspectable UIColor *borderColor;
 
-+ (__kindof UIView *)MQLoadNibView;
-- (void)MQSetViewCircleWithBorderWidth:(CGFloat) width andColor:(UIColor *)borColor;
-- (void)MQViewSetCornerRadius:(CGFloat)radius;
++ (__kindof UIView *)WGLoadNibView;
+- (void)WGSetViewCircleWithBorderWidth:(CGFloat) width andColor:(UIColor *)borColor;
+- (void)WGViewSetCornerRadius:(CGFloat)radius;
 
 @end

@@ -192,4 +192,11 @@
     return newimg;
 }
 
++ (instancetype)originalImageNamed:(NSString *)imageName {
+    
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
 @end

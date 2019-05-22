@@ -26,12 +26,14 @@
 #import "WGNativeScanTool.h"
 #import "WGScanView.h"
 #import "WGDatePickerView.h"
+#import "WGTimerPicker.h"
 #import "WGPromptBoxView.h"
 #import "WGTagView.h"
 #import "TZImagePickerController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
 #import <YBImageBrowser/YBImageBrowser.h>
+#import "NavigationView.h"
 
 
 

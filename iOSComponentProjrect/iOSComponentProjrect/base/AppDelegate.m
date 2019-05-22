@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UIViewController+BaseViewController.h"
-
-
+#import "WGMainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     
-    UITabBarController * rootVC = [UIViewController rootViewController];
+    
+    
+    WGMainTabBarController *rootVC = [[WGMainTabBarController alloc]init];
+    
+//    UITabBarController * rootVC = [UIViewController rootViewController];
     self.window.rootViewController = (UIViewController *)rootVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

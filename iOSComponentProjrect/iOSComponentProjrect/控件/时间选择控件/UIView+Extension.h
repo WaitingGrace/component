@@ -33,7 +33,14 @@
 @property (nonatomic, assign) CGSize size;
 /**  origin */
 @property (nonatomic, assign) CGPoint origin;
-
+/** 圆角 */
+@property (nonatomic) IBInspectable CGFloat cornerRadius;
+/** 头像圆角 */
+@property (nonatomic) IBInspectable BOOL avatarCorner;
+/** 边框 */
+@property (nonatomic) IBInspectable CGFloat borderWidth;
+/** 边框颜色*/
+@property (nonatomic, strong) IBInspectable UIColor *borderColor;
 
 /**  设置圆角  */
 - (void)rounded:(CGFloat)cornerRadius;

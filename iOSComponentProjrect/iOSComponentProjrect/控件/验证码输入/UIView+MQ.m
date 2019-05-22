@@ -51,18 +51,18 @@
 }
 
 
-+ (__kindof UIView *)MQLoadNibView{
++ (__kindof UIView *)WGLoadNibView{
     NSString *className = NSStringFromClass([self class]);
     return [[[UINib nibWithNibName:className bundle:nil] instantiateWithOwner:self options:nil] lastObject];
 }
 
 
--(void)MQViewSetCornerRadius:(CGFloat)radius{
+-(void)WGViewSetCornerRadius:(CGFloat)radius{
     [self.layer setMasksToBounds:YES];
     [self.layer setCornerRadius:radius];
 }
--(void)MQSetViewCircleWithBorderWidth:(CGFloat) width andColor:(UIColor *)borColor{
-    [self MQViewSetCornerRadius:(self.frame.size.height/2)];
+-(void)WGSetViewCircleWithBorderWidth:(CGFloat) width andColor:(UIColor *)borColor{
+    [self WGViewSetCornerRadius:(self.frame.size.height/2)];
     self.layer.borderWidth=width;
     self.layer.borderColor=[borColor CGColor];
 }
