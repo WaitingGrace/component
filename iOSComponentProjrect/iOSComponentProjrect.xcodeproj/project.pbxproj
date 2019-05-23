@@ -170,6 +170,10 @@
 		8FC4A26A2248CDFC00BAD4F5 /* WGScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4A2692248CDFC00BAD4F5 /* WGScoreViewController.m */; };
 		8FC4A26E2248CE7B00BAD4F5 /* WGQrCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4A26D2248CE7B00BAD4F5 /* WGQrCodeViewController.m */; };
 		8FC4A2722248CEFF00BAD4F5 /* WGPasswordVerificationCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC4A2712248CEFF00BAD4F5 /* WGPasswordVerificationCodeVC.m */; };
+		8FD9C58322954D700081B703 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */; };
+		8FD9C58422954D700081B703 /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58222954D700081B703 /* WGActionSheet.m */; };
+		8FD9C5882295556F0081B703 /* WGFloatTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C5872295556F0081B703 /* WGFloatTips.m */; };
+		8FD9C58C229555A40081B703 /* WGFloatTipsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58B229555A40081B703 /* WGFloatTipsVC.m */; };
 		8FDAB8FE224C6AA000C38B0E /* IDInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDAB8F0224C6A9E00C38B0E /* IDInfoViewController.xib */; };
 		8FDAB8FF224C6AA000C38B0E /* AVCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB8F1224C6A9E00C38B0E /* AVCaptureViewController.m */; };
 		8FDAB900224C6AA000C38B0E /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB8F2224C6A9E00C38B0E /* UIAlertController+Extend.m */; };
@@ -486,6 +490,14 @@
 		8FC4A26D2248CE7B00BAD4F5 /* WGQrCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGQrCodeViewController.m; sourceTree = "<group>"; };
 		8FC4A2702248CEFF00BAD4F5 /* WGPasswordVerificationCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGPasswordVerificationCodeVC.h; sourceTree = "<group>"; };
 		8FC4A2712248CEFF00BAD4F5 /* WGPasswordVerificationCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGPasswordVerificationCodeVC.m; sourceTree = "<group>"; };
+		8FD9C57F22954D6F0081B703 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		8FD9C58122954D700081B703 /* WGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGActionSheet.h; sourceTree = "<group>"; };
+		8FD9C58222954D700081B703 /* WGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGActionSheet.m; sourceTree = "<group>"; };
+		8FD9C5862295556F0081B703 /* WGFloatTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFloatTips.h; sourceTree = "<group>"; };
+		8FD9C5872295556F0081B703 /* WGFloatTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFloatTips.m; sourceTree = "<group>"; };
+		8FD9C58A229555A40081B703 /* WGFloatTipsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGFloatTipsVC.h; sourceTree = "<group>"; };
+		8FD9C58B229555A40081B703 /* WGFloatTipsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGFloatTipsVC.m; sourceTree = "<group>"; };
 		8FDAB8EF224C6A9E00C38B0E /* IDInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDInfo.h; sourceTree = "<group>"; };
 		8FDAB8F0224C6A9E00C38B0E /* IDInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IDInfoViewController.xib; sourceTree = "<group>"; };
 		8FDAB8F1224C6A9E00C38B0E /* AVCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCaptureViewController.m; sourceTree = "<group>"; };
@@ -552,10 +564,11 @@
 		8F2AA1E32244D65400E49BB3 /* 实例 */ = {
 			isa = PBXGroup;
 			children = (
+				8FD9C5892295557E0081B703 /* 浮动提示 */,
 				8F6CBCDC2293D26600E4F040 /* 视频播放 */,
 				8F99E360228E393700948BAC /* 筛选 */,
 				8FC068C42281216A007991FD /* PageMenu */,
-				8F903B9C227FE3EE002B3A1C /* AlertView */,
+				8F903B9C227FE3EE002B3A1C /* AlertView-sheetView */,
 				8F94A7E62251E3750056142A /* 多图片查看 */,
 				8F91E6B0224E1BB20034E8BE /* 图片裁剪 */,
 				8FDAB911224C781000C38B0E /* 图片多选 */,
@@ -824,18 +837,7 @@
 				8FF86A8A21A6AB2500C95EA4 /* 工具类 */,
 				8FF86A8921A6AB1000C95EA4 /* 控件 */,
 				8F2AA1E32244D65400E49BB3 /* 实例 */,
-				8F89AF5F21A54C1800A811F9 /* ViewController.h */,
-				8F89AF6021A54C1800A811F9 /* ViewController.m */,
-				8F99E3B5228EB74600948BAC /* WGNavHiddenViewController.h */,
-				8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */,
-				8F972C80224B16C100F03621 /* WGOtherViewController.h */,
-				8F972C81224B16C100F03621 /* WGOtherViewController.m */,
-				8F99E3AC228EABF600948BAC /* WGMineViewController.h */,
-				8F99E3AD228EABF600948BAC /* WGMineViewController.m */,
-				8F99E3AF228EAC0600948BAC /* WGProjrectViewController.h */,
-				8F99E3B0228EAC0600948BAC /* WGProjrectViewController.m */,
-				8F99E3B2228EAC1300948BAC /* WGCartViewController.h */,
-				8F99E3B3228EAC1300948BAC /* WGCartViewController.m */,
+				8FD9C58D229557C80081B703 /* 控制器 */,
 				8F89AF7E21A54CC400A811F9 /* PrefixHeader.pch */,
 				8F89438121AD44EF00666DD8 /* Config.h */,
 				8F89AF6221A54C1800A811F9 /* Main.storyboard */,
@@ -911,13 +913,13 @@
 			path = "自动化shell";
 			sourceTree = "<group>";
 		};
-		8F903B9C227FE3EE002B3A1C /* AlertView */ = {
+		8F903B9C227FE3EE002B3A1C /* AlertView-sheetView */ = {
 			isa = PBXGroup;
 			children = (
 				8F903B9D227FE41B002B3A1C /* WGAlertViewVC.h */,
 				8F903B9E227FE41B002B3A1C /* WGAlertViewVC.m */,
 			);
-			name = AlertView;
+			name = "AlertView-sheetView";
 			sourceTree = "<group>";
 		};
 		8F903BA0227FE430002B3A1C /* 自定义AlertView */ = {
@@ -1369,6 +1371,70 @@
 			name = "密码、验证码";
 			sourceTree = "<group>";
 		};
+		8FD9C57E22954D2F0081B703 /* 自定义SheetView */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9C57F22954D6F0081B703 /* UIImage+ImageEffects.h */,
+				8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */,
+				8FD9C58122954D700081B703 /* WGActionSheet.h */,
+				8FD9C58222954D700081B703 /* WGActionSheet.m */,
+			);
+			path = "自定义SheetView";
+			sourceTree = "<group>";
+		};
+		8FD9C5852295555C0081B703 /* 浮动提示 */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9C5862295556F0081B703 /* WGFloatTips.h */,
+				8FD9C5872295556F0081B703 /* WGFloatTips.m */,
+			);
+			path = "浮动提示";
+			sourceTree = "<group>";
+		};
+		8FD9C5892295557E0081B703 /* 浮动提示 */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9C58A229555A40081B703 /* WGFloatTipsVC.h */,
+				8FD9C58B229555A40081B703 /* WGFloatTipsVC.m */,
+			);
+			name = "浮动提示";
+			sourceTree = "<group>";
+		};
+		8FD9C58D229557C80081B703 /* 控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9C58F229557F00081B703 /* 其他 */,
+				8FD9C58E229557E70081B703 /* 首页 */,
+			);
+			path = "控制器";
+			sourceTree = "<group>";
+		};
+		8FD9C58E229557E70081B703 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				8F89AF5F21A54C1800A811F9 /* ViewController.h */,
+				8F89AF6021A54C1800A811F9 /* ViewController.m */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		8FD9C58F229557F00081B703 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				8F99E3AF228EAC0600948BAC /* WGProjrectViewController.h */,
+				8F99E3B0228EAC0600948BAC /* WGProjrectViewController.m */,
+				8F99E3B5228EB74600948BAC /* WGNavHiddenViewController.h */,
+				8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */,
+				8F972C80224B16C100F03621 /* WGOtherViewController.h */,
+				8F972C81224B16C100F03621 /* WGOtherViewController.m */,
+				8F99E3AC228EABF600948BAC /* WGMineViewController.h */,
+				8F99E3AD228EABF600948BAC /* WGMineViewController.m */,
+				8F99E3B2228EAC1300948BAC /* WGCartViewController.h */,
+				8F99E3B3228EAC1300948BAC /* WGCartViewController.m */,
+			);
+			path = "其他";
+			sourceTree = "<group>";
+		};
 		8FDAB8ED224C632B00C38B0E /* 身份证扫描 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1445,6 +1511,7 @@
 		8FF86A8921A6AB1000C95EA4 /* 控件 */ = {
 			isa = PBXGroup;
 			children = (
+				8FD9C5852295555C0081B703 /* 浮动提示 */,
 				8F6CBCC02293A67100E4F040 /* 视频播放 */,
 				8F57B31E228D6CE3001EB6BA /* 筛选菜单 */,
 				8F65D70022897341000AE47B /* NavView */,
@@ -1453,6 +1520,7 @@
 				8FC068E7228135EE007991FD /* BadgeView */,
 				8FC068BC2281211E007991FD /* PageMenu */,
 				8F7617BC228044900099566C /* DorpView */,
+				8FD9C57E22954D2F0081B703 /* 自定义SheetView */,
 				8F903BA0227FE430002B3A1C /* 自定义AlertView */,
 				8F91654D2255A2270061E6B5 /* 引导图 */,
 				8F3878AC2254A2CD00F1A70B /* 一些动画 */,
@@ -1751,6 +1819,7 @@
 				8F972C9C224B68E500F03621 /* WGNavSearchBar.m in Sources */,
 				8F89AF8221A54F3500A811F9 /* WGPromptBoxView.m in Sources */,
 				8FC068BF22812140007991FD /* WGPageMenu.m in Sources */,
+				8FD9C5882295556F0081B703 /* WGFloatTips.m in Sources */,
 				8F99E391228E4B6100948BAC /* WGComplexMenuViewController.m in Sources */,
 				8F6CBCD82293A68400E4F040 /* NSString+HCD.m in Sources */,
 				8F972C92224B1EFB00F03621 /* WGTagView.m in Sources */,
@@ -1773,6 +1842,7 @@
 				8F99E389228E4B6100948BAC /* WGWaterFallViewController.m in Sources */,
 				8FA8E36921B12D650099F088 /* UIViewController+NavBarHidden.m in Sources */,
 				8F57B343228D6D3E001EB6BA /* WGDropMenuWaterFallCell.m in Sources */,
+				8FD9C58C229555A40081B703 /* WGFloatTipsVC.m in Sources */,
 				8F99E392228E4B6100948BAC /* WGBaseViewController.m in Sources */,
 				8F65D6FF2289728D000AE47B /* WGWebView.m in Sources */,
 				8F99E3AE228EABF600948BAC /* WGMineViewController.m in Sources */,
@@ -1839,6 +1909,7 @@
 				8FDAB902224C6AA000C38B0E /* RectManager.m in Sources */,
 				8FC4A26A2248CDFC00BAD4F5 /* WGScoreViewController.m in Sources */,
 				8FDAB905224C6AA000C38B0E /* IDInfo.m in Sources */,
+				8FD9C58322954D700081B703 /* UIImage+ImageEffects.m in Sources */,
 				8FC068E1228135C6007991FD /* EightViewController.m in Sources */,
 				8FA8E34021B0CE5D0099F088 /* NSString+WGFrame.m in Sources */,
 				8F57B344228D6D3E001EB6BA /* WGDropMenuFilterTagItem.m in Sources */,
@@ -1846,6 +1917,7 @@
 				8F57B34A228D6D3E001EB6BA /* NSString+Arc4random.m in Sources */,
 				8F57B345228D6D3E001EB6BA /* WGDropMenuFilterInputItem.m in Sources */,
 				8F57B348228D6D3E001EB6BA /* WGDropMenuModel.m in Sources */,
+				8FD9C58422954D700081B703 /* WGActionSheet.m in Sources */,
 				8FA8E37721B12F4D0099F088 /* WGVerCodeInputView.m in Sources */,
 				8F99E397228E4B9500948BAC /* WGScreeningVC.m in Sources */,
 			);

@@ -26,6 +26,7 @@
 #import "WGScreeningVC.h"
 #import "WGFloatWindow.h"
 #import "WGVideoPlayerVC.h"
+#import "WGFloatTipsVC.h"
 
 @interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView * tableView;
@@ -78,7 +79,7 @@
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:(UIBarButtonItemStyleDone) target:self action:@selector(outPutView)];
-    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView",@"PageMenu/brdgeView",@"WKWebView",@"筛选菜单",@"视频播放"];
+    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView",@"PageMenu/brdgeView",@"WKWebView",@"筛选菜单",@"视频播放",@"浮动提示"];
     
 #warning mark -===============tabbar badge==适用于原生tabbar==自定义的会有位移
     NSString * countNum = [NSString stringWithFormat:@"%ld",(long)self.titleArray.count];
@@ -246,6 +247,12 @@
         {
             WGVideoPlayerVC * playerVC = [[WGVideoPlayerVC alloc]init];
             [self toTargetController:(UIViewController *)playerVC];
+        }
+            break;
+        case 16:
+        {
+            WGFloatTipsVC * tipsVC = [[WGFloatTipsVC alloc]init];
+            [self toTargetController:(UIViewController *)tipsVC];
         }
             break;
         default:

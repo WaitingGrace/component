@@ -8,8 +8,9 @@
 
 #import "WGAlertViewVC.h"
 #import "WGUIAlertView.h"
+#import "WGActionSheet.h"
 
-@interface WGAlertViewVC ()
+@interface WGAlertViewVC ()<WGActionSheetDelegate>
 
 @end
 
@@ -240,6 +241,15 @@
         }];
         
         [self.view addSubview:alertView];
+    }else if (tag == 12){
+        WGActionSheet *actionSheet = [[WGActionSheet alloc] initWithDelegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"title" otherButtonTitles: nil];
+        [actionSheet addButtonWithTitle:@"Hi!" actionBlock:^{  }];
+        [actionSheet addButtonWithTitle:@"Bye"];
+        [actionSheet addButtonWithTitle:@"Jyeno2_"];
+        [actionSheet addButtonWithTitle:@"Tara"];
+        [actionSheet addButtonWithTitle:@"YY"];
+        
+        [actionSheet show];
     }
 }
 
@@ -255,5 +265,27 @@
     }
 }
 
+- (void)actionSheetCancel:(WGActionSheet *)actionSheet {
+    
+}
 
+- (void)actionSheet:(WGActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+}
+
+- (void)actionSheet:(WGActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    
+}
+
+- (void)actionSheet:(WGActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+}
+
+- (void)willPresentActionSheet:(WGActionSheet *)actionSheet {
+    
+}
+
+- (void)didPresentActionSheet:(WGActionSheet *)actionSheet {
+    
+}
 @end
