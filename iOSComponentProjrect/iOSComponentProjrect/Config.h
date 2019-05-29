@@ -12,7 +12,7 @@
 #import "NSString+WGFrame.h"
 #import "WGEraseToolbar.h"
 #import "MBProgressHUD+WG.h"
-#import "IMHAFttpTool.h"
+#import "WGAFttpTool.h"
 #import "WGGradientLabel.h"
 #import "UIImage+WGExpand.h"
 #import "UIImage+GradientColor.h"

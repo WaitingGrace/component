@@ -449,7 +449,7 @@
     badgeView0.badgeText = @"3";
 
     UIButton *button1 = [buttons objectAtIndex:2];
-    WGBadgeView *badgeView2 = [[WGBadgeView alloc] initWithParentView:button1.titleLabel alignment:WGBadgeViewAlignmentTopRight];
+    WGBadgeView *badgeView2 = [[WGBadgeView alloc] initWithParentView:button1.titleLabel alignment:WGBadgeViewAlignmentTopLeft];
     badgeView2.badgePositionAdjustment = CGPointMake(10, 0);
     badgeView2.badgeBackgroundColor = [UIColor whiteColor];
     badgeView2.badgeOverlayColor = [UIColor clearColor];

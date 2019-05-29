@@ -27,11 +27,16 @@
 #import "WGFloatWindow.h"
 #import "WGVideoPlayerVC.h"
 #import "WGFloatTipsVC.h"
+#import "WGTheModalViewController.h"
+#import "WGAnimationStarView.h"
+#import "WGWaterfallFlowVC.h"
+#import "WGOtherViewController.h"
 
-@interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic ,strong) UITableView * tableView;
 @property (nonatomic ,strong) WGOutPutView  * popView;
 @property (nonatomic ,strong) NSArray * titleArray;
+@property (nonatomic ,strong) UIButton * flowBtn;
 
 @end
 
@@ -78,14 +83,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:(UIBarButtonItemStyleDone) target:self action:@selector(outPutView)];
-    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView",@"PageMenu/brdgeView",@"WKWebView",@"筛选菜单",@"视频播放",@"浮动提示"];
+    UIImage *maskImage = [UIImage imageNamed:@"btn_link_fill"];
+    UIImage *lineImage = [UIImage imageNamed:@"btn_link_line"];
     
-#warning mark -===============tabbar badge==适用于原生tabbar==自定义的会有位移
+    WGAnimationStarView *starView = [[WGAnimationStarView alloc] init];
+    starView.frame = CGRectMake(0, 0, maskImage.size.width, maskImage.size.height);
+    starView.maskImage = maskImage;
+    starView.borderImage = lineImage;
+    starView.fillColor = [UIColor colorWithRed:0.94 green:0.27 blue:0.32 alpha:1];
+    UIBarButtonItem * collectionItem = [[UIBarButtonItem alloc]initWithCustomView:starView];
+    
+    UIBarButtonItem * rightIKtem = [[UIBarButtonItem alloc]initWithTitle:@"菜单" style:(UIBarButtonItemStyleDone) target:self action:@selector(outPutView)];
+    
+    self.navigationItem.rightBarButtonItems = @[rightIKtem,collectionItem];
+    
+    
+    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView+sheetView",@"PageMenu+brdgeView",@"WKWebView",@"筛选菜单",@"视频播放",@"浮动提示",@"自定义控制器模态动画",@"瀑布流",@"常用支付操作提示",@""];
+    
+#warning mark - tabbar badge==适用于原生tabbar==自定义的会有位移
     NSString * countNum = [NSString stringWithFormat:@"%ld",(long)self.titleArray.count];
 //    [self.navigationController.tabBarController.tabBar updateBadge:countNum atIndex:1];
     [self.tabBarController.tabBar updateBadge:countNum atIndex:0];
-#warning mark -========= WGFloatWindow 与视频播放器全屏模式冲突，暂未解决
+    
+#warning mark - WGFloatWindow 与视频播放器全屏模式冲突，暂未解决
     // 1.add floating button
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [WGFloatWindow wg_addWindowOnTarget:self onClick:^{
@@ -112,14 +132,38 @@
          [WGFloatWindow wg_setBackgroundImage:@"default_selected" forState:UIControlStateNormal];
      });
  */
+    
+    [self addFlowWindow];
+    
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
 //    [WGFloatWindow wg_setHideWindow:YES];
 }
 
-- (void)outPutView{
-    [self.popView pop];
+#pragma mark ---
+#pragma mark --- 屏幕可拖动按钮
+- (void)addFlowWindow{
+    UIButton *whiteSpotsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    whiteSpotsButton.frame = CGRectMake(0, 300, 55, 55);
+    whiteSpotsButton.backgroundColor = RGBA(51, 51, 51, 0.6);
+    whiteSpotsButton.layer.cornerRadius = 27.5;
+    [whiteSpotsButton setTitle:@"白点" forState:UIControlStateNormal];
+    [whiteSpotsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [whiteSpotsButton addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.flowBtn = whiteSpotsButton;
+    [self.view addSubview:whiteSpotsButton];
+    
+//    UIButton * dismissBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+//    [whiteSpotsButton addSubview:dismissBtn];
+//    dismissBtn.frame = CGRectMake(45, 0, 10, 10);
+//    dismissBtn.backgroundColor = [UIColor clearColor];
+    //拖动的 UIPanGestureRecognizer
+    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanFrom:)];
+    [self.view bringSubviewToFront:whiteSpotsButton];//放到最前面
+    [whiteSpotsButton addGestureRecognizer:panRecognizer];//关键语句，添加一个手势监测；
+    panRecognizer.maximumNumberOfTouches = 1;
+    panRecognizer.delegate = self;
 }
 #pragma mark ---
 #pragma mark --- WGOutputViewDelegate
@@ -135,7 +179,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:nil];
-    cell.textLabel.text = self.titleArray[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@----%@",@(indexPath.row),self.titleArray[indexPath.row]];
     
     return cell;
 }
@@ -255,6 +299,30 @@
             [self toTargetController:(UIViewController *)tipsVC];
         }
             break;
+        case 17:
+        {
+            WGTheModalViewController * modalVC = [[WGTheModalViewController alloc]init];
+            [self toTargetController:(UIViewController *)modalVC];
+        }
+            break;
+        case 18:
+        {
+            WGWaterfallFlowVC * fallFlowVC = [[WGWaterfallFlowVC alloc]init];
+            [self toTargetController:(UIViewController *)fallFlowVC];
+        }
+            break;
+        case 19:
+        {
+            WGOtherViewController * otherVC = [[WGOtherViewController alloc]init];
+            [self toTargetController:(UIViewController *)otherVC];
+        }
+            break;
+        case 20:
+        {
+//            WGFloatTipsVC * tipsVC = [[WGFloatTipsVC alloc]init];
+//            [self toTargetController:(UIViewController *)tipsVC];
+        }
+            break;
         default:
             break;
     }
@@ -269,6 +337,46 @@
 
 #pragma mark ---
 #pragma mark --- Private methods
+/**
+ pop视图
+ */
+- (void)outPutView{
+    [self.popView pop];
+}
+/**
+ 白点按钮点击
+ */
+- (void)btnClick:(UIButton *)sender{
+    NSLog(@"白点被点击");
+}
+-(void)handlePanFrom:(UIPanGestureRecognizer*)recognizer
+{
+    NSLog(@"拖动操作");
+    //处理拖动操作,拖动是基于imageview，如果经过旋转，拖动方向也是相对imageview上下左右移动，而不是屏幕对上下左右
+    CGPoint translation = [recognizer translationInView:recognizer.view];
+    
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x, recognizer.view.center.y + translation.y);
+    NSLog(@"%f %f",recognizer.view.center.y+translation.y,ScreenHeight-49);
+    [recognizer setTranslation:CGPointZero inView:recognizer.view];
+    if(recognizer.state == UIGestureRecognizerStateEnded){
+        if (recognizer.view.center.x + translation.x<ScreenWidth/2) {
+            [UIView animateWithDuration:0.5f animations:^{
+                recognizer.view.center = CGPointMake(recognizer.view.frame.size.width/2, recognizer.view.center.y + translation.y);
+            }];
+        }else{
+            [UIView animateWithDuration:0.5f animations:^{
+                recognizer.view.center = CGPointMake(ScreenWidth-recognizer.view.frame.size.width/2, recognizer.view.center.y + translation.y);
+            }];
+        }
+        if (recognizer.view.center.y+translation.y<recognizer.view.frame.size.width/2 || recognizer.view.center.y+translation.y>ScreenHeight-NavHeight-recognizer.view.frame.size.width/2) {
+            [UIView animateWithDuration:0.5f animations:^{
+                recognizer.view.center = CGPointMake(ScreenWidth-44/2-5, ScreenHeight-NavHeight-100+44/2);
+            }];
+        }
+    }
+}
+
+
 /**
  时间选择
  */

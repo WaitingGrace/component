@@ -12,6 +12,7 @@
 #pragma mark ----------------------------- 屏幕、设备、系统信息
 #define ScreenWidth   [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+
 #define  iPhone4      ([[UIScreen mainScreen] bounds].size.height==480)
 #define  iPhone5      ([[UIScreen mainScreen] bounds].size.height==568)
 #define  iPhone4_5    (iPhone4 || iPhone5)
@@ -44,13 +45,15 @@
 #define SUCCESS(a)      [MBProgressHUD showSuccess:a];
 
 #define iPhoneXAll (iPhoneX || iPhoneXR || iPhone_Xs_Max)
-#define NavHeight        (iPhoneXAll ? 84.0 : (iPad?90.0:64.0))
+#define NavHeight        (iPhoneXAll ? 88.0 : (iPad?90.0:64.0))
 #define TabHeight        (iPhoneXAll ? 83.0 : 49.0)
 #define BottomHeight     (iPhone4_5?55:(iPhone6?60:65))
 #define StatusBarHeight  (iPhoneXAll? 44.0 : 20.0)
 #define SafeAreaBottomHeight (iPhoneXAll ?34 : 0)
 // StatusbarH + NavigationH
 #define SafeAreaTopHeight (iPhoneXAll ? 88.f : 64.f)
+//当前页面高度
+#define ScreenViewHeight (ScreenHeight - StatusBarHeight)
 // KeyWindow
 #define kKeyWindow [UIApplication sharedApplication].keyWindow
 #define kFilterButtonHeight 44

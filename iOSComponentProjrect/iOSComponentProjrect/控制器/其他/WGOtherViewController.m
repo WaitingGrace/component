@@ -7,6 +7,8 @@
 //
 
 #import "WGOtherViewController.h"
+#import "Config.h"
+#import "WGPlaymentHUD.h"
 
 @interface WGOtherViewController ()
 
@@ -14,20 +16,34 @@
 
 @implementation WGOtherViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BackColor;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"开始支付" style:UIBarButtonItemStylePlain target:self action:@selector(showLoadingAnimation)];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"支付完成" style:UIBarButtonItemStylePlain target:self action:@selector(showSuccessAnimation)];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)showLoadingAnimation{
+    
+    self.title = @"正在付款...";
+    
+    //隐藏支付完成动画
+    [WGOperationSuccessHUD hideIn:self.view];
+    //显示支付中动画
+    [WGOperationLoadingHUD showIn:self.view];
 }
-*/
+
+-(void)showSuccessAnimation{
+    
+    self.title = @"付款完成";
+    
+    //隐藏支付中成动画
+    [WGOperationLoadingHUD hideIn:self.view];
+    //显示支付完成动画
+    [WGOperationSuccessHUD showIn:self.view];
+}
+
 
 @end

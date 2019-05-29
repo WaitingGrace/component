@@ -16,7 +16,11 @@
 #import "WGCartViewController.h"
 #import "WGNavHiddenViewController.h"
 #import "WGVideoPlayerVC.h"
+#import "WGPopMenuView.h"
 
+
+NSString * const ItemTitle         = @"ItemTitle";
+NSString * const ItemIconImageName = @"ItemIconImageName";
 @interface WGMainTabBarController ()<UITabBarControllerDelegate,WGTabBarDelegate>
 
 @end
@@ -106,7 +110,7 @@
     
     // 我的
     WGMineViewController *MyVC = [[WGMineViewController alloc] init];
-    [self addOneChildViewController:MyVC title:@"我的" normalImage:[UIImage originalImageNamed:@"icon_presonal"] pressedImage:[UIImage originalImageNamed:@"icon_presonal_sign"] navigationBarTitle:@""];
+    [self addOneChildViewController:MyVC title:@"我的" normalImage:[UIImage originalImageNamed:@"icon_presonal"] pressedImage:[UIImage originalImageNamed:@"icon_presonal_sign"] navigationBarTitle:@"点击页面打开"];
 }
 
 #pragma mark - 添加1个子控制器
@@ -158,8 +162,27 @@
 //点击中间按钮的代理方法
 - (void)tabBarPlusBtnClick:(WGTabbar *)tabBar{
     NSLog(@"凸出中间");
-    WGProjrectViewController *projectVC = [[WGProjrectViewController alloc] init];
-    [self presentViewController:projectVC animated:YES completion:nil];
+
+    NSArray *array = @[
+                       @{ItemTitle : @"发布销售信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       @{ItemTitle : @"发布采购信息", ItemIconImageName : @"icon_special"},
+                       ];
+    
+    WGPopMenuView *menu = [[WGPopMenuView alloc]initWithItems:array];
+    [menu setTipsLblByTipsStr:@"在XX网上发布您现在的idear"];
+    [menu setExitViewImage:@"center_exit"];
+    @WeakObj(self)
+    [menu setSelectCompletionBlock:^(NSInteger index) {
+        NSLog(@"%ld",(long)index);
+        WGProjrectViewController *projectVC = [[WGProjrectViewController alloc] init];
+        [selfWeak presentViewController:projectVC animated:YES completion:nil];
+    }];
 }
 
 #pragma mark --UITabBarControllerDelegate

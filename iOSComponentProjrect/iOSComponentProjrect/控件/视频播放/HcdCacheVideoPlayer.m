@@ -403,7 +403,6 @@ typedef enum : NSUInteger {
         [self calculateDownloadProgress:playerItem];
         
     } else if ([HCDVideoPlayerItemPlaybackBufferEmptyKeyPath isEqualToString:keyPath]) { //监听播放器在缓冲数据的状态
-        //        [[XCHudHelper sharedInstance] showHudOnView:_showView caption:nil image:nil acitivity:YES autoHideTime:0];
         [self.actIndicator startAnimating];
         self.actIndicator.hidden = NO;
         if (playerItem.isPlaybackBufferEmpty) {
@@ -1258,9 +1257,7 @@ typedef enum : NSUInteger {
             break;
     }
     
-    NSLog(@"%@", str);
-    //    [XCHudHelper showMessage:str];
-    
+    NSLog(@"%@", str);    
 }
 
 #pragma mark - 通知中心检测到屏幕旋转

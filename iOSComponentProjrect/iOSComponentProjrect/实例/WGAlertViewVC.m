@@ -35,7 +35,8 @@
                         @"标题+内容+两个按钮",
                         @"标题+内容+三个按钮",
                         @"标题+内容+四个按钮",
-                        @"添加自定义视图"];
+                        @"添加自定义视图",
+                        @"sheetView"];
     CGFloat W = self.view.frame.size.width;
     for (int i = 0; i < titles.count; ++i) {
         

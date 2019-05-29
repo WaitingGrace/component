@@ -1,5 +1,5 @@
 //
-//
+//  WGBadgeView.m
 //
 //
 //  Created by 帅棋 on 17/10/26.

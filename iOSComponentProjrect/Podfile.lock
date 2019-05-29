@@ -19,6 +19,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
+  - MJRefresh (3.1.16)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - FMDB
   - Masonry
   - MBProgressHUD
+  - MJRefresh
   - TZImagePickerController
   - YBImageBrowser
 
@@ -43,11 +45,12 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   YBImageBrowser: 549bc0f8bc7df723381e1516db240d827ded3673
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: 4dda026ba2c46c8b505e98f3c88cbce8d0c2fde4
+PODFILE CHECKSUM: 843c5ea6ca43c99aef0b7ea2af4cd0d2927a9e00
 
 COCOAPODS: 1.4.0

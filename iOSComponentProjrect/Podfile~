@@ -13,6 +13,6 @@ pod 'MBProgressHUD'
 pod 'Masonry'
 pod 'TZImagePickerController'
 pod 'YBImageBrowser'
-pod 'YYKit'
+
 
 end

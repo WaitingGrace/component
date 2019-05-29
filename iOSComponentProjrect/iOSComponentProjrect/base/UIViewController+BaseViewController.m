@@ -9,14 +9,14 @@
 
 #import "UIViewController+BaseViewController.h"
 #import "ViewController.h"
-#import "WGOtherViewController.h"
+#import "WGMineViewController.h"
 #import "WGTabbar.h"
 
 @implementation UIViewController (BaseViewController)
 /*! 设置tabbar */
 + (UITabBarController *)rootViewController{
     UINavigationController * homeNav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
-    UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:[[WGOtherViewController alloc] init]];
+    UINavigationController * meNav = [[UINavigationController alloc] initWithRootViewController:[[WGMineViewController alloc] init]];
     
     UITabBarController* tabBarController = [[UITabBarController alloc] init];
     tabBarController.view.backgroundColor = [UIColor whiteColor];
