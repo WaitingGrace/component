@@ -31,6 +31,7 @@
 #import "WGAnimationStarView.h"
 #import "WGWaterfallFlowVC.h"
 #import "WGOtherViewController.h"
+#import "WGSphereMarkVC.h"
 
 @interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic ,strong) UITableView * tableView;
@@ -75,13 +76,15 @@
 #pragma mark --- 生命周期
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    NSArray * images = @[@"123",@"233",@"u=2365",@"u=34521",@"u=34946jpg",@"u=186425"];
-    [WGGuideView showGudieView:images];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self launchAnimation];
+    NSArray * images = @[@"image_1",@"image_2",@"image_3",@"image_4",@"image_5",@"image_6"];
+    [WGGuideView showGudieView:images];
+    
     [self.view addSubview:self.tableView];
     UIImage *maskImage = [UIImage imageNamed:@"btn_link_fill"];
     UIImage *lineImage = [UIImage imageNamed:@"btn_link_line"];
@@ -98,7 +101,7 @@
     self.navigationItem.rightBarButtonItems = @[rightIKtem,collectionItem];
     
     
-    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView+sheetView",@"PageMenu+brdgeView",@"WKWebView",@"筛选菜单",@"视频播放",@"浮动提示",@"自定义控制器模态动画",@"瀑布流",@"常用支付操作提示",@""];
+    self.titleArray = @[@"时间选择",@"预约时间",@"验证码输入",@"二维码",@"版本更新",@"不规则按钮标签/搜索导航",@"打分",@"身份证扫描",@"多图片选择",@"图片任意裁剪",@"多图浏览/dropview",@"自定义AlertView+sheetView",@"PageMenu+brdgeView",@"WKWebView",@"筛选菜单",@"视频播放",@"浮动提示",@"自定义控制器模态动画",@"瀑布流",@"常用支付操作提示",@"球体标签"];
     
 #warning mark - tabbar badge==适用于原生tabbar==自定义的会有位移
     NSString * countNum = [NSString stringWithFormat:@"%ld",(long)self.titleArray.count];
@@ -140,6 +143,24 @@
     [super viewWillDisappear:animated];
 //    [WGFloatWindow wg_setHideWindow:YES];
 }
+#pragma mark ---
+#pragma mark --- 启动页动画消失
+- (void)launchAnimation {
+    UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateInitialViewController];
+    
+    UIView *launchView = viewController.view;
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
+    [mainWindow addSubview:launchView];
+    
+    [UIView animateWithDuration:1.0f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        launchView.alpha = 0.0f;
+        //转换成3d 规模
+        launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 2.0f, 2.0f, 1.0f);
+    } completion:^(BOOL finished) {
+        [launchView removeFromSuperview];
+    }];
+}
 
 #pragma mark ---
 #pragma mark --- 屏幕可拖动按钮
@@ -180,7 +201,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:nil];
     cell.textLabel.text = [NSString stringWithFormat:@"%@----%@",@(indexPath.row),self.titleArray[indexPath.row]];
-    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
@@ -319,8 +339,8 @@
             break;
         case 20:
         {
-//            WGFloatTipsVC * tipsVC = [[WGFloatTipsVC alloc]init];
-//            [self toTargetController:(UIViewController *)tipsVC];
+            WGSphereMarkVC * markVC = [[WGSphereMarkVC alloc]init];
+            [self toTargetController:(UIViewController *)markVC];
         }
             break;
         default:
@@ -330,7 +350,6 @@
 
 - (void)toTargetController:(UIViewController *)vc{
     self.hidesBottomBarWhenPushed = YES;
-    [self.tableView removeObserver:self forKeyPath:@"contentOffset"];
     [self.navigationController pushViewController:vc animated:YES];
     self.hidesBottomBarWhenPushed = NO;
 }

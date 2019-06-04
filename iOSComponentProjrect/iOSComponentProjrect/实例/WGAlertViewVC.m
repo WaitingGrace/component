@@ -211,7 +211,7 @@
         // when you want a fully custom view, you should use 'contentViewHeight'
         /*
          
-         JHUIAlertConfig *config = [[JHUIAlertConfig alloc] init];
+         WGUIAlertConfig *config = [[WGUIAlertConfig alloc] init];
          config.contentViewHeight = 200;
          
          */

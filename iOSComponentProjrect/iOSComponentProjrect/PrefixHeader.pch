@@ -23,12 +23,21 @@
 #define  iPhoneXR      (CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size))
 #define  iPhone_Xs_Max (CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size))
 #define  iPad         ([[UIDevice currentDevice].model isEqualToString:@"iPad"])
-
-#define SystemVersion [[UIDevice  currentDevice] systemVersion] //设备版本
-#define SystemModel   [[UIDevice currentDevice] model] //设备模式
-#define BundleVersion [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"] //当前app版本
+//设备UUID
+#define UUIDString    [[UIDevice currentDevice].identifierForVendor UUIDString]
+//设备版本
+#define SystemVersion [[UIDevice  currentDevice] systemVersion]
+//设备模式
+#define SystemModel   [[UIDevice currentDevice] model]
+//当前app版本
+#define BundleVersion [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+//当前系统name
 #define BundleName    [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleDisplayName"]
-#define CurrentLanguage [[NSLocale preferredLanguages] objectAtIndex:0]//当前系统语言
+//当前系统语言
+#define CurrentLanguage [[NSLocale preferredLanguages] objectAtIndex:0]
+
+#define UIScaleForWidth  ScreenWidth/375.f
+#define UIScaleForHeight ScreenHeight/667.f
 
 #define RequestSuccess(a)  [[NSString stringWithFormat:@"%@",a[@"status"]] isEqualToString:@"1"]
 #define StringEqual(a, b)  [[NSString stringWithFormat:@"%@",a] isEqualToString:b]
@@ -98,6 +107,7 @@ alpha:1.0]
 /*! 弱引用宏 */
 #define WeakObj(o)       try{}@finally{} __weak typeof(o) o##Weak = o;
 
+/*！StrongSelf 必须与 WeakSelf 同时定义*/
 #define WeakSelf @weakify(self);
 #define StrongSelf @strongify(self);
 #ifndef weakify

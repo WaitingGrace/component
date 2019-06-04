@@ -60,33 +60,7 @@ typedef void(^WGUIAlertViewAddCustomViewBlock)(WGUIAlertView *alertView, CGRect 
 
 - (instancetype)initWithConfig:(WGUIAlertConfig *)config;
 
-/**
- 
- @brief Add a custom view in 'JHUIAlertView'.
- 
- @note If you want to add a custom view in 'contentView', you should keep enough sapce through use 'topPadding', 'bottomPadding' etc.
- 
- @code
- 
- JHUIAlertConfig *config    = [[JHUIAlertConfig alloc] init];
- config.title.text          = @"add custom view";
- config.title.bottomPadding = 40;  // use this to keep enough height
- 
- JHUIAlertView *alertView = [[JHUIAlertView alloc] initWithConfig:config];
- 
- [alertView addCustomView:^(JHUIAlertView *alertView, CGRect contentViewRect, CGRect titleLabelRect, CGRect contentLabelRect) {
- 
-     UILabel *label = [[UILabel alloc] init];
-     label.frame = CGRectMake(0, CGRectGetMaxY(titleLabelRect)+10, contentViewRect.size.width, 20);
-     label.text = @"This is a custom view";
-     label.textColor = [UIColor blackColor];
-     label.font = [UIFont systemFontOfSize:14];
-     label.textAlignment = NSTextAlignmentCenter;
- 
-     [alertView.contentView addSubview:label];
- }];
- 
- */
+
 - (void)addCustomView:(WGUIAlertViewAddCustomViewBlock)block;
 
 @end

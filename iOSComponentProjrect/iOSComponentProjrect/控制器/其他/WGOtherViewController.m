@@ -16,13 +16,13 @@
 
 @implementation WGOtherViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = BackColor;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"开始支付" style:UIBarButtonItemStylePlain target:self action:@selector(showLoadingAnimation)];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"支付完成" style:UIBarButtonItemStylePlain target:self action:@selector(showSuccessAnimation)];
+
+    UIBarButtonItem * startItem = [[UIBarButtonItem alloc] initWithTitle:@"开始支付" style:UIBarButtonItemStylePlain target:self action:@selector(showLoadingAnimation)];
+    UIBarButtonItem * successItem = [[UIBarButtonItem alloc] initWithTitle:@"支付完成" style:UIBarButtonItemStylePlain target:self action:@selector(showSuccessAnimation)];
+    self.navigationItem.rightBarButtonItems = @[startItem,successItem];
 }
 
 -(void)showLoadingAnimation{
