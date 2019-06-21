@@ -20,7 +20,6 @@
 		8F057D0422A5227A0045A4D0 /* BezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F057CFE22A5227A0045A4D0 /* BezierPathView.m */; };
 		8F057D0522A5227A0045A4D0 /* UIImageView+Tranform3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F057CFF22A5227A0045A4D0 /* UIImageView+Tranform3D.m */; };
 		8F057D0622A5227A0045A4D0 /* WLBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F057D0022A5227A0045A4D0 /* WLBallView.m */; };
-		8F057D0822A522A60045A4D0 /* 指纹解锁.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F057D0722A522A60045A4D0 /* 指纹解锁.png */; };
 		8F057D0A22A522AB0045A4D0 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F057D0922A522AB0045A4D0 /* ball.png */; };
 		8F057D0D22A522BA0045A4D0 /* yanjing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F057D0B22A522B90045A4D0 /* yanjing.jpg */; };
 		8F057D0E22A522BA0045A4D0 /* eyes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F057D0C22A522BA0045A4D0 /* eyes.png */; };
@@ -180,6 +179,7 @@
 		8F99E3B1228EAC0600948BAC /* WGProjrectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B0228EAC0600948BAC /* WGProjrectViewController.m */; };
 		8F99E3B4228EAC1300948BAC /* WGCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B3228EAC1300948BAC /* WGCartViewController.m */; };
 		8F99E3B7228EB74600948BAC /* WGNavHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */; };
+		8F9E5C2F22BC7D7E00081E0F /* 指纹解锁.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9E5C2E22BC7D7D00081E0F /* 指纹解锁.png */; };
 		8FA79653229BD4060015EEAE /* WGBubbleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA79650229BD4060015EEAE /* WGBubbleDelegate.m */; };
 		8FA79654229BD4060015EEAE /* WGBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA79651229BD4060015EEAE /* WGBubbleViewController.m */; };
 		8FA7965A229BD8460015EEAE /* WGSpeechRecognitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA79659229BD8460015EEAE /* WGSpeechRecognitionVC.m */; };
@@ -204,8 +204,6 @@
 		8FA8E35F21B113470099F088 /* deleteFlowWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA8E35621B113460099F088 /* deleteFlowWindow.png */; };
 		8FA8E36921B12D650099F088 /* UIViewController+NavBarHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E36621B12D650099F088 /* UIViewController+NavBarHidden.m */; };
 		8FA8E36A21B12D650099F088 /* WGHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E36721B12D650099F088 /* WGHiddenViewController.m */; };
-		8FA8E37021B12D770099F088 /* ChooseRank.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E36E21B12D770099F088 /* ChooseRank.m */; };
-		8FA8E37121B12D770099F088 /* ChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E36F21B12D770099F088 /* ChooseView.m */; };
 		8FA8E37721B12F4D0099F088 /* WGVerCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E37421B12F4D0099F088 /* WGVerCodeInputView.m */; };
 		8FA8E37821B12F4D0099F088 /* UIView+MQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E37521B12F4D0099F088 /* UIView+MQ.m */; };
 		8FA8E37E21B1351E0099F088 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA8E37B21B1351D0099F088 /* BadgeView.m */; };
@@ -254,7 +252,6 @@
 		8FC52489229E668600C12A47 /* WGOperationSuccessHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52487229E668600C12A47 /* WGOperationSuccessHUD.m */; };
 		8FC5248A229E668600C12A47 /* WGOperationLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52488229E668600C12A47 /* WGOperationLoadingHUD.m */; };
 		8FC52494229E852400C12A47 /* WGSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52490229E852300C12A47 /* WGSphereView.m */; };
-		8FC52498229E85EF00C12A47 /* WGSphereViewback.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FC52497229E85EF00C12A47 /* WGSphereViewback.png */; };
 		8FC5249C229E866400C12A47 /* WGSphereMarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */; };
 		8FD9C58322954D700081B703 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */; };
 		8FD9C58422954D700081B703 /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58222954D700081B703 /* WGActionSheet.m */; };
@@ -306,7 +303,6 @@
 		8F057CFF22A5227A0045A4D0 /* UIImageView+Tranform3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Tranform3D.m"; sourceTree = "<group>"; };
 		8F057D0022A5227A0045A4D0 /* WLBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLBallView.m; sourceTree = "<group>"; };
 		8F057D0122A5227A0045A4D0 /* ScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleView.h; sourceTree = "<group>"; };
-		8F057D0722A522A60045A4D0 /* 指纹解锁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "指纹解锁.png"; sourceTree = "<group>"; };
 		8F057D0922A522AB0045A4D0 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		8F057D0B22A522B90045A4D0 /* yanjing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yanjing.jpg; sourceTree = "<group>"; };
 		8F057D0C22A522BA0045A4D0 /* eyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyes.png; sourceTree = "<group>"; };
@@ -588,6 +584,7 @@
 		8F99E3B3228EAC1300948BAC /* WGCartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGCartViewController.m; sourceTree = "<group>"; };
 		8F99E3B5228EB74600948BAC /* WGNavHiddenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGNavHiddenViewController.h; sourceTree = "<group>"; };
 		8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGNavHiddenViewController.m; sourceTree = "<group>"; };
+		8F9E5C2E22BC7D7D00081E0F /* 指纹解锁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "指纹解锁.png"; sourceTree = "<group>"; };
 		8FA7964F229BD4060015EEAE /* WGBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBubbleViewController.h; sourceTree = "<group>"; };
 		8FA79650229BD4060015EEAE /* WGBubbleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBubbleDelegate.m; sourceTree = "<group>"; };
 		8FA79651229BD4060015EEAE /* WGBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBubbleViewController.m; sourceTree = "<group>"; };
@@ -631,10 +628,6 @@
 		8FA8E36621B12D650099F088 /* UIViewController+NavBarHidden.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavBarHidden.m"; sourceTree = "<group>"; };
 		8FA8E36721B12D650099F088 /* WGHiddenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGHiddenViewController.m; sourceTree = "<group>"; };
 		8FA8E36821B12D650099F088 /* UIViewController+NavBarHidden.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavBarHidden.h"; sourceTree = "<group>"; };
-		8FA8E36C21B12D770099F088 /* ChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseView.h; sourceTree = "<group>"; };
-		8FA8E36D21B12D770099F088 /* ChooseRank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseRank.h; sourceTree = "<group>"; };
-		8FA8E36E21B12D770099F088 /* ChooseRank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseRank.m; sourceTree = "<group>"; };
-		8FA8E36F21B12D770099F088 /* ChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseView.m; sourceTree = "<group>"; };
 		8FA8E37321B12F4C0099F088 /* WGVerCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGVerCodeInputView.h; sourceTree = "<group>"; };
 		8FA8E37421B12F4D0099F088 /* WGVerCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGVerCodeInputView.m; sourceTree = "<group>"; };
 		8FA8E37521B12F4D0099F088 /* UIView+MQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MQ.m"; sourceTree = "<group>"; };
@@ -725,7 +718,6 @@
 		8FC52491229E852400C12A47 /* WGPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGPoint.h; sourceTree = "<group>"; };
 		8FC52492229E852400C12A47 /* WGSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGSphereView.h; sourceTree = "<group>"; };
 		8FC52493229E852400C12A47 /* WGMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMatrix.h; sourceTree = "<group>"; };
-		8FC52497229E85EF00C12A47 /* WGSphereViewback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WGSphereViewback.png; sourceTree = "<group>"; };
 		8FC5249A229E866400C12A47 /* WGSphereMarkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGSphereMarkVC.h; sourceTree = "<group>"; };
 		8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGSphereMarkVC.m; sourceTree = "<group>"; };
 		8FD9C57F22954D6F0081B703 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -811,7 +803,7 @@
 				8F057D0C22A522BA0045A4D0 /* eyes.png */,
 				8F057D0B22A522B90045A4D0 /* yanjing.jpg */,
 				8F057D0922A522AB0045A4D0 /* ball.png */,
-				8F057D0722A522A60045A4D0 /* 指纹解锁.png */,
+				8F9E5C2E22BC7D7D00081E0F /* 指纹解锁.png */,
 				8F057CF722A5227A0045A4D0 /* Base */,
 				8F057CEB22A521D50045A4D0 /* AccelerometerViewController.h */,
 				8F057CE222A521D50045A4D0 /* AccelerometerViewController.m */,
@@ -1308,7 +1300,7 @@
 			path = "gif加载图";
 			sourceTree = "<group>";
 		};
-		8F96413F229FD40D001AFE30 /* 类探探卡片 */ = {
+		8F96413F229FD40D001AFE30 /* 类探探卡片侧滑浏览 */ = {
 			isa = PBXGroup;
 			children = (
 				8F964140229FD42D001AFE30 /* WGDraggableConfig.h */,
@@ -1317,7 +1309,7 @@
 				8F964143229FD42E001AFE30 /* WGDraggableContainer.h */,
 				8F964144229FD42E001AFE30 /* WGDraggableContainer.m */,
 			);
-			path = "类探探卡片";
+			path = "类探探卡片侧滑浏览";
 			sourceTree = "<group>";
 		};
 		8F964147229FD456001AFE30 /* 防探探卡片 */ = {
@@ -1694,7 +1686,7 @@
 			name = "气泡效果";
 			sourceTree = "<group>";
 		};
-		8FA7964E229BD3F70015EEAE /* 控制器动画弹出 */ = {
+		8FA7964E229BD3F70015EEAE /* 控制器气泡弹出 */ = {
 			isa = PBXGroup;
 			children = (
 				8FA79652229BD4060015EEAE /* WGBubbleDelegate.h */,
@@ -1702,7 +1694,7 @@
 				8FA7964F229BD4060015EEAE /* WGBubbleViewController.h */,
 				8FA79651229BD4060015EEAE /* WGBubbleViewController.m */,
 			);
-			path = "控制器动画弹出";
+			path = "控制器气泡弹出";
 			sourceTree = "<group>";
 		};
 		8FA7965E229BE36F0015EEAE /* 抛物线动画 */ = {
@@ -1834,17 +1826,6 @@
 				8FA8E36621B12D650099F088 /* UIViewController+NavBarHidden.m */,
 			);
 			path = "导航栏透明";
-			sourceTree = "<group>";
-		};
-		8FA8E36B21B12D770099F088 /* 购物车选择view */ = {
-			isa = PBXGroup;
-			children = (
-				8FA8E36C21B12D770099F088 /* ChooseView.h */,
-				8FA8E36F21B12D770099F088 /* ChooseView.m */,
-				8FA8E36D21B12D770099F088 /* ChooseRank.h */,
-				8FA8E36E21B12D770099F088 /* ChooseRank.m */,
-			);
-			path = "购物车选择view";
 			sourceTree = "<group>";
 		};
 		8FA8E37221B12F300099F088 /* 验证码输入 */ = {
@@ -2037,7 +2018,6 @@
 		8FC5248F229E850D00C12A47 /* 球体标签视图 */ = {
 			isa = PBXGroup;
 			children = (
-				8FC52497229E85EF00C12A47 /* WGSphereViewback.png */,
 				8FC52493229E852400C12A47 /* WGMatrix.h */,
 				8FC52491229E852400C12A47 /* WGPoint.h */,
 				8FC52492229E852400C12A47 /* WGSphereView.h */,
@@ -2196,14 +2176,14 @@
 			children = (
 				8F985A0722A60B1100DB068B /* 签名 */,
 				8F974CE422A0BC0A00844BD8 /* 贺卡 */,
-				8F96413F229FD40D001AFE30 /* 类探探卡片 */,
+				8F96413F229FD40D001AFE30 /* 类探探卡片侧滑浏览 */,
 				8F964129229FC63D001AFE30 /* gif加载图 */,
 				8FC5248F229E850D00C12A47 /* 球体标签视图 */,
 				8FC52484229E663400C12A47 /* 操作等待完成HUD */,
 				8F99B7DF229D18C300AD31D1 /* 动画收藏 */,
 				8FA79667229BEDCA0015EEAE /* 控制器自定义模态动画 */,
 				8FA7965E229BE36F0015EEAE /* 抛物线动画 */,
-				8FA7964E229BD3F70015EEAE /* 控制器动画弹出 */,
+				8FA7964E229BD3F70015EEAE /* 控制器气泡弹出 */,
 				8FD9C5852295555C0081B703 /* 浮动提示 */,
 				8F6CBCC02293A67100E4F040 /* 视频播放 */,
 				8F57B31E228D6CE3001EB6BA /* 筛选菜单 */,
@@ -2223,7 +2203,6 @@
 				8F7F9B592243974B00661DDE /* 二维码 */,
 				8FA8E37921B134E40099F088 /* Tabbar消息提醒 */,
 				8FA8E37221B12F300099F088 /* 验证码输入 */,
-				8FA8E36B21B12D770099F088 /* 购物车选择view */,
 				8FA8E36421B12D650099F088 /* 导航栏透明 */,
 				8FA8E35521B1130A0099F088 /* 桌面可拖动窗口（所有页面） */,
 				8FA8E34121B0E7E70099F088 /* 打分 */,
@@ -2360,6 +2339,7 @@
 				8F974D2222A0D07B00844BD8 /* birthday.mp3 in Resources */,
 				8F900E11228C034100FD995F /* exportTest.plist in Resources */,
 				8FDAB910224C6BBF00C38B0E /* zocr0.lib in Resources */,
+				8F9E5C2F22BC7D7E00081E0F /* 指纹解锁.png in Resources */,
 				8F99B7FA229D399C00AD31D1 /* WGCollctionCell.xib in Resources */,
 				8FC068EC228138F5007991FD /* mateor.jpg in Resources */,
 				8FBDD7952292577B006CE772 /* default_selected.png in Resources */,
@@ -2385,7 +2365,6 @@
 				8FC068C32281215C007991FD /* 3006981-889f087b55f3e57f.gif in Resources */,
 				8FA8E34E21B0E8020099F088 /* foregroundStar.png in Resources */,
 				8F48464421AFD0C00064E21D /* info@3x.png in Resources */,
-				8F057D0822A522A60045A4D0 /* 指纹解锁.png in Resources */,
 				8FA8E38721B13B110099F088 /* 消息提醒.md in Resources */,
 				8F48464221AFD0C00064E21D /* info@2x.png in Resources */,
 				8F974D2422A0D07B00844BD8 /* bg_iPhoneX.jpg in Resources */,
@@ -2398,7 +2377,6 @@
 				8F964150229FD593001AFE30 /* liked@2x.png in Resources */,
 				8FA8E38321B1370B0099F088 /* MBP.md in Resources */,
 				8F964151229FD593001AFE30 /* nope@2x.png in Resources */,
-				8FC52498229E85EF00C12A47 /* WGSphereViewback.png in Resources */,
 				8F96413A229FC85C001AFE30 /* timg-3.gif in Resources */,
 				8F057D0A22A522AB0045A4D0 /* ball.png in Resources */,
 				8FA8E34D21B0E8020099F088 /* backgroundStar.png in Resources */,
@@ -2530,7 +2508,6 @@
 				8F99E3B7228EB74600948BAC /* WGNavHiddenViewController.m in Sources */,
 				8F985A0C22A60B1E00DB068B /* WGTheSignatureView.m in Sources */,
 				8FA8E32021B0CAF00099F088 /* IMHTopSegmetControl.m in Sources */,
-				8FA8E37121B12D770099F088 /* ChooseView.m in Sources */,
 				8F964133229FC654001AFE30 /* WGCADisplayLineImage.m in Sources */,
 				8F974D1522A0BC2D00844BD8 /* WGBirthdayUserDescView.m in Sources */,
 				8FC52483229E60BE00C12A47 /* WGPopMenuItem.m in Sources */,
@@ -2577,7 +2554,6 @@
 				8FC52489229E668600C12A47 /* WGOperationSuccessHUD.m in Sources */,
 				8F972C8C224B1E5F00F03621 /* WGTag.m in Sources */,
 				8F94A7E92251E4F60056142A /* WGSeePhotosVC.m in Sources */,
-				8FA8E37021B12D770099F088 /* ChooseRank.m in Sources */,
 				8F057CF122A521D50045A4D0 /* LightSensitiveViewController.m in Sources */,
 				8F985A0522A6039D00DB068B /* TableViewCell.m in Sources */,
 				8FC06901228161F0007991FD /* WGTimerUtil.m in Sources */,

@@ -21,6 +21,9 @@
 
     
     
+#if DEBUG
+    [[NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"] load];
+#endif
     
     WGMainTabBarController *rootVC = [[WGMainTabBarController alloc]init];
     

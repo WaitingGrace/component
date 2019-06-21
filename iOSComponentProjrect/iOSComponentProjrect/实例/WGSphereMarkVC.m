@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
-    UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"WGSphereViewback"]];
+    UIImageView * imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"birthday_envelope_letter_paper"]];
     imageView.frame = self.view.frame;
     [self.view addSubview:imageView];
     

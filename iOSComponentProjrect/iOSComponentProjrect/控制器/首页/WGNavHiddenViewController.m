@@ -71,7 +71,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     if (indexPath.section == 0) {
-        cell.imageView.image = [WGCellImage tableViewCell:cell image:[UIImage imageNamed:@"watch"] imageW:40 imageH:40];
+        cell.imageView.image = [WGCellImage tableViewCell:cell image:[UIImage imageNamed:[NSString stringWithFormat:@"commodity_%ld",(long)indexPath.row]] imageW:40 imageH:40];
         if (indexPath.row == 0) {
             cell.textLabel.text = [NSString stringWithFormat:@"点击加入购物车"];
         }else{
@@ -239,8 +239,8 @@
     StrongSelf
     self.signatureView.signatureBlock = ^(UIImage *image) {
         
-        WGUIAlertConfig *config = [[WGUIAlertConfig alloc] init];
-        config.title.text       = @"这是你的签名图片";
+        WGUIAlertConfig *config  = [[WGUIAlertConfig alloc] init];
+        config.title.text        = @"这是你的签名图片";
         config.contentViewHeight = 480;
         config.title.bottomPadding = 400;
         

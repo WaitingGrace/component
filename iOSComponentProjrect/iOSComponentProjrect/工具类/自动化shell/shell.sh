@@ -12,10 +12,10 @@ SECONDS=0
 project_path=$(cd `dirname $0`; pwd)
 
 #工程名 将XXX替换成自己的工程名
-project_name=DoctorSee
+project_name=XXX
 
 #scheme名 将XXX替换成自己的sheme名
-scheme_name=DoctorSee
+scheme_name=XXX
 
 #打包模式 Debug/Release
 development_mode=Debug

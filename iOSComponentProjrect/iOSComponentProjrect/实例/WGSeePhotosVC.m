@@ -97,7 +97,9 @@
     self.beginDate = [NSString getCurrentTime];
     self.endDate = [NSString getDateWithYears:0 moths:0 days:4];
     self.adviceType = String(@"4张");
+    
     self.point = CGPointMake(ScreenWidth-16-ScreenWidth/5, NavHeight-4);
+    
     [self.view addSubview:self.headerView];
     [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);

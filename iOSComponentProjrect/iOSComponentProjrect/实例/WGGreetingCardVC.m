@@ -84,7 +84,7 @@
 - (void)showHeartBirthdayViewController {
     WGBirthdayItem *birthdayItem = [[WGBirthdayItem alloc] init];
     birthdayItem.birthdayTitle = @"亲爱的戎马天涯";
-    birthdayItem.birthdaySubTitle = @"简理财精心为您准备了3000元理财金";
+    birthdayItem.birthdaySubTitle = @"新益华精心为您准备了3000元医疗金";
     birthdayItem.birthdayDescriptionTitle = @"生日礼金，和一份特别惊喜！";
     [[WGBirthdayMgr shareInstance] showBirthdayViewInViewController:self birthdayItem:birthdayItem receiveBlock:^{
         NSLog(@"动画完成后做一些处理");
@@ -94,8 +94,8 @@
 // 信封生日祝福
 - (void)showEnvelopeBirthdayOneViewController {
     WGBirthdayModel *model = [[WGBirthdayModel alloc] init];
-    model.birthdayLayerName = @"亲爱的戎马天涯";
-    model.birthdayLayerDesc = @"简理财精心为您准备了3000元生日礼金，赶快来领取吧";
+    model.birthdayLayerName = @"亲爱的天涯归人";
+    model.birthdayLayerDesc = @"新益华精心为您准备了3000元生日礼金，赶快来领取吧";
     model.birthdayLayerType = WGBirthdayLayerTypeForA;
     [[WGBirthdayEnvelopeMgr shareInstance] showBirthdayViewController:self birthdayModel:model];
 }
@@ -103,7 +103,7 @@
 // 信封送好友生日祝福
 - (void)showEnvelopeBirthdayTwoViewController {
     WGBirthdayModel *model = [[WGBirthdayModel alloc] init];
-    model.birthdayLayerName = @"亲爱的戎马天涯";
+    model.birthdayLayerName = @"亲爱的戎马四季";
     model.birthdayLayerDesc = @"您的好友高圆圆小姐过生日啦，快去送祝福吧";
     model.birthdayLayerType = WGBirthdayLayerTypeForB;
     for (NSInteger i = 0; i < 1; ++i) {

@@ -26,7 +26,7 @@
 }
 -(void)createBtn{
     UIButton *touchIDBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    touchIDBtn.frame = CGRectMake(0, 0, 300, 300);
+    touchIDBtn.frame = CGRectMake(0, 0, 300, 500);
     touchIDBtn.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     [touchIDBtn setTitle:@"点击我进行指纹验证" forState:UIControlStateNormal];
     [touchIDBtn setImage:[UIImage imageNamed:@"指纹解锁"] forState:UIControlStateNormal];
@@ -35,8 +35,8 @@
     [self.view addSubview:touchIDBtn];
     touchIDBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     
-    touchIDBtn.imageEdgeInsets = UIEdgeInsetsMake(50,  100,  80,  100);
-    touchIDBtn.titleEdgeInsets = UIEdgeInsetsMake(200, 0, 50,  0);
+    touchIDBtn.imageEdgeInsets = UIEdgeInsetsMake(-200,  0,  0,  0);
+    touchIDBtn.titleEdgeInsets = UIEdgeInsetsMake(200, -300, 0,  0);
     
 }
 
@@ -50,7 +50,12 @@
         //设置 输入密码 按钮的标题
         ctx.localizedFallbackTitle = @"验证登录密码";
         //设置 取消 按钮的标题 iOS10之后
-        ctx.localizedCancelTitle = @"取消";
+        if (@available(iOS 10.0, *)) {
+            ctx.localizedCancelTitle = @"取消";
+        } else {
+            
+            
+        }
         //检测指纹数据库更改 验证成功后返回一个NSData对象，否则返回nil
         //ctx.evaluatedPolicyDomainState;
         // 这个属性应该是类似于支付宝的指纹开启应用，如果你打开他解锁之后，按Home键返回桌面，再次进入支付宝是不需要录入指纹的。因为这个属性可以设置一个时间间隔，在时间间隔内是不需要再次录入。默认是0秒，最长可以设置5分钟
@@ -80,7 +85,7 @@
                     switch (error.code) {
                         case -1://LAErrorAuthenticationFailed
                             message = @"已经连续三次指纹识别错误了，请输入密码验证";
-                            _localizedReason = @"指纹验证失败";
+                            self->_localizedReason = @"指纹验证失败";
                             break;
                         case -2:
                             message = @"在TouchID对话框中点击了取消按钮";

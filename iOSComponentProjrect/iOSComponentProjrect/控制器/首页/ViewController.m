@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "Config.h"
-#import "ChooseView.h"
 #import "UIViewController+Update.h"
 #import "WGScoreViewController.h"
 #import "WGScanViewController.h"
@@ -47,14 +46,14 @@
 #pragma mark --- 懒加载
 - (WGOutPutView *)popView{
     if (_popView == nil) {
-        WGCellModel * model1 = [[WGCellModel alloc]initWithTitle:@"添加体能记录" imageName:nil];
-        WGCellModel * model2 = [[WGCellModel alloc]initWithTitle:@"添加健康记录" imageName:nil];
-        WGCellModel * model3 = [[WGCellModel alloc]initWithTitle:@"添加此番记录" imageName:nil];
-        WGCellModel * model4 = [[WGCellModel alloc]initWithTitle:@"添加成长记录" imageName:nil];
-        WGCellModel * model5 = [[WGCellModel alloc]initWithTitle:@"添加用药记录" imageName:nil];
+        WGCellModel * model1 = [[WGCellModel alloc]initWithTitle:@"体能记录" imageName:@"百度"];
+        WGCellModel * model2 = [[WGCellModel alloc]initWithTitle:@"健康记录" imageName:nil];
+        WGCellModel * model3 = [[WGCellModel alloc]initWithTitle:@"此番记录" imageName:@"百度"];
+        WGCellModel * model4 = [[WGCellModel alloc]initWithTitle:@"成长记录" imageName:nil];
+        WGCellModel * model5 = [[WGCellModel alloc]initWithTitle:@"用药记录" imageName:@"百度"];
         
         NSArray * popArray = @[model1,model2,model3,model4,model5];
-        _popView = [[WGOutPutView alloc]initWithDataArray:popArray origin:CGPointMake(ScreenWidth-12, 50) width:150 height:40 direction:(kWGOutputViewDirectionRight)];
+        _popView = [[WGOutPutView alloc]initWithDataArray:popArray origin:CGPointMake(ScreenWidth-15, NavHeight-5) width:150 height:40 direction:(kWGOutputViewDirectionRight)];
         _popView.delegate = self;
         @WeakObj(self)
         _popView.dismissOperation = ^{
