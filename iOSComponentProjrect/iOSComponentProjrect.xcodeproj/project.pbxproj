@@ -253,6 +253,7 @@
 		8FC5248A229E668600C12A47 /* WGOperationLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52488229E668600C12A47 /* WGOperationLoadingHUD.m */; };
 		8FC52494229E852400C12A47 /* WGSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52490229E852300C12A47 /* WGSphereView.m */; };
 		8FC5249C229E866400C12A47 /* WGSphereMarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */; };
+		8FD9739722EE8F4B004D496E /* WGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9739622EE8F4B004D496E /* WGFileManager.m */; };
 		8FD9C58322954D700081B703 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */; };
 		8FD9C58422954D700081B703 /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58222954D700081B703 /* WGActionSheet.m */; };
 		8FD9C5882295556F0081B703 /* WGFloatTips.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C5872295556F0081B703 /* WGFloatTips.m */; };
@@ -272,6 +273,10 @@
 		8FDAB917224C7C0000C38B0E /* WGImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB916224C7C0000C38B0E /* WGImageItem.m */; };
 		8FDAB91D224CBA6B00C38B0E /* WGTackImgaeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB919224CBA6A00C38B0E /* WGTackImgaeView.m */; };
 		8FDAB91E224CBA6B00C38B0E /* WGCropImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB91B224CBA6B00C38B0E /* WGCropImageVC.m */; };
+		8FE67B9822F3D49F003E7518 /* idcard_first_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9722F3D49F003E7518 /* idcard_first_head.png */; };
+		8FE67B9A22F3D4A9003E7518 /* nav_torch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9922F3D4A9003E7518 /* nav_torch_off.png */; };
+		8FE67B9C22F3D4B1003E7518 /* nav_torch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9B22F3D4B1003E7518 /* nav_torch_on.png */; };
+		8FE67B9E22F3D4BD003E7518 /* idcard_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9D22F3D4BD003E7518 /* idcard_back.png */; };
 		8FF86A8E21A6ABB800C95EA4 /* NSString+WGPinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF86A8D21A6ABB800C95EA4 /* NSString+WGPinYin.m */; };
 		8FF86A9121A6ACAD00C95EA4 /* WGPinYinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF86A9021A6ACAD00C95EA4 /* WGPinYinModel.m */; };
 		8FF86A9421A6AD3C00C95EA4 /* NSString+WGExpand.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF86A9321A6AD3C00C95EA4 /* NSString+WGExpand.m */; };
@@ -720,6 +725,8 @@
 		8FC52493229E852400C12A47 /* WGMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMatrix.h; sourceTree = "<group>"; };
 		8FC5249A229E866400C12A47 /* WGSphereMarkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGSphereMarkVC.h; sourceTree = "<group>"; };
 		8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGSphereMarkVC.m; sourceTree = "<group>"; };
+		8FD9739522EE8F4B004D496E /* WGFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFileManager.h; sourceTree = "<group>"; };
+		8FD9739622EE8F4B004D496E /* WGFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFileManager.m; sourceTree = "<group>"; };
 		8FD9C57F22954D6F0081B703 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		8FD9C58122954D700081B703 /* WGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGActionSheet.h; sourceTree = "<group>"; };
@@ -757,6 +764,10 @@
 		8FDAB91A224CBA6A00C38B0E /* WGCropImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCropImageVC.h; sourceTree = "<group>"; };
 		8FDAB91B224CBA6B00C38B0E /* WGCropImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCropImageVC.m; sourceTree = "<group>"; };
 		8FDAB91C224CBA6B00C38B0E /* WGTackImgaeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTackImgaeView.h; sourceTree = "<group>"; };
+		8FE67B9722F3D49F003E7518 /* idcard_first_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idcard_first_head.png; sourceTree = "<group>"; };
+		8FE67B9922F3D4A9003E7518 /* nav_torch_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_torch_off.png; sourceTree = "<group>"; };
+		8FE67B9B22F3D4B1003E7518 /* nav_torch_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_torch_on.png; sourceTree = "<group>"; };
+		8FE67B9D22F3D4BD003E7518 /* idcard_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idcard_back.png; sourceTree = "<group>"; };
 		8FF86A8C21A6ABB800C95EA4 /* NSString+WGPinYin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+WGPinYin.h"; sourceTree = "<group>"; };
 		8FF86A8D21A6ABB800C95EA4 /* NSString+WGPinYin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WGPinYin.m"; sourceTree = "<group>"; };
 		8FF86A8F21A6ACAD00C95EA4 /* WGPinYinModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGPinYinModel.h; sourceTree = "<group>"; };
@@ -2035,6 +2046,15 @@
 			name = "球体标签";
 			sourceTree = "<group>";
 		};
+		8FD9739422EE8F3F004D496E /* 本地文件操作 */ = {
+			isa = PBXGroup;
+			children = (
+				8FD9739522EE8F4B004D496E /* WGFileManager.h */,
+				8FD9739622EE8F4B004D496E /* WGFileManager.m */,
+			);
+			path = "本地文件操作";
+			sourceTree = "<group>";
+		};
 		8FD9C57E22954D2F0081B703 /* 自定义SheetView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2110,6 +2130,10 @@
 		8FDAB8EE224C637F00C38B0E /* 身份证扫描 */ = {
 			isa = PBXGroup;
 			children = (
+				8FE67B9D22F3D4BD003E7518 /* idcard_back.png */,
+				8FE67B9B22F3D4B1003E7518 /* nav_torch_on.png */,
+				8FE67B9922F3D4A9003E7518 /* nav_torch_off.png */,
+				8FE67B9722F3D49F003E7518 /* idcard_first_head.png */,
 				8FDAB909224C6BBF00C38B0E /* libexidcard */,
 				8FDAB8FC224C6AA000C38B0E /* AVCaptureViewController.h */,
 				8FDAB8F1224C6A9E00C38B0E /* AVCaptureViewController.m */,
@@ -2221,6 +2245,7 @@
 		8FF86A8A21A6AB2500C95EA4 /* 工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				8FD9739422EE8F3F004D496E /* 本地文件操作 */,
 				8FC52479229E304E00C12A47 /* 排序算法 */,
 				8F99E39C228E972700948BAC /* 崩溃定位 */,
 				8F900E0D228C034100FD995F /* 自动化shell */,
@@ -2337,8 +2362,10 @@
 				8F89AF6921A54C1900A811F9 /* LaunchScreen.storyboard in Resources */,
 				8FA8E35F21B113470099F088 /* deleteFlowWindow.png in Resources */,
 				8F974D2222A0D07B00844BD8 /* birthday.mp3 in Resources */,
+				8FE67B9E22F3D4BD003E7518 /* idcard_back.png in Resources */,
 				8F900E11228C034100FD995F /* exportTest.plist in Resources */,
 				8FDAB910224C6BBF00C38B0E /* zocr0.lib in Resources */,
+				8FE67B9822F3D49F003E7518 /* idcard_first_head.png in Resources */,
 				8F9E5C2F22BC7D7E00081E0F /* 指纹解锁.png in Resources */,
 				8F99B7FA229D399C00AD31D1 /* WGCollctionCell.xib in Resources */,
 				8FC068EC228138F5007991FD /* mateor.jpg in Resources */,
@@ -2349,6 +2376,7 @@
 				8F99E3A1228E973F00948BAC /* README.md in Resources */,
 				8F99B7E6229D18D300AD31D1 /* btn_link_line@2x.png in Resources */,
 				8F974D1022A0BC2D00844BD8 /* WGBirthdayViewController.xib in Resources */,
+				8FE67B9C22F3D4B1003E7518 /* nav_torch_on.png in Resources */,
 				8F964153229FDE9B001AFE30 /* qiaoba.jpeg in Resources */,
 				8F974D1722A0BC2D00844BD8 /* WGBirthdayUserFriendsCollectionViewCell.xib in Resources */,
 				8FA8E38121B136530099F088 /* 渐变色.md in Resources */,
@@ -2385,6 +2413,7 @@
 				8F974CF922A0BC2000844BD8 /* WGHappyBirthdayViewController.xib in Resources */,
 				8F6CBCD32293A68400E4F040 /* hcdCachePlayer.bundle in Resources */,
 				8F96413C229FC863001AFE30 /* timg-2.gif in Resources */,
+				8FE67B9A22F3D4A9003E7518 /* nav_torch_off.png in Resources */,
 				8F48464A21AFD0C70064E21D /* error.png in Resources */,
 				8F89AF6421A54C1800A811F9 /* Main.storyboard in Resources */,
 				8F99B7E4229D18D300AD31D1 /* btn_link_fill@2x.png in Resources */,
@@ -2646,6 +2675,7 @@
 				8FC068DE228135C6007991FD /* SecondViewController.m in Sources */,
 				8F96414D229FD499001AFE30 /* WGDraggableVC.m in Sources */,
 				8F89AF5E21A54C1800A811F9 /* AppDelegate.m in Sources */,
+				8FD9739722EE8F4B004D496E /* WGFileManager.m in Sources */,
 				8FC068FD228161F0007991FD /* WGDateModel.m in Sources */,
 				8F974CF622A0BC2000844BD8 /* WGBirthdayMgr.m in Sources */,
 				8FDAB91E224CBA6B00C38B0E /* WGCropImageVC.m in Sources */,
@@ -2823,7 +2853,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/iOSComponentProjrect/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSComponentProjrect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2849,7 +2879,7 @@
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/iOSComponentProjrect/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSComponentProjrect/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -43,7 +43,7 @@
 - (UIButton *)cancleBtn{
     if (_cancleBtn == nil) {
         _cancleBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_cancleBtn setImage:[UIImage imageNamed:@"取消"] forState:(UIControlStateNormal)];
+        [_cancleBtn setImage:[UIImage imageNamed:@"photo_delete"] forState:(UIControlStateNormal)];
         [_cancleBtn setBackgroundColor:[UIColor clearColor]];
         [_cancleBtn addTarget:self action:@selector(cancleSignView) forControlEvents:(UIControlEventTouchUpInside)];
         

@@ -47,6 +47,8 @@
 	<string>提醒事项</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>语音识别权限</string>
+	<key>NSMotionUsageDescription</key>
+	<string>陀螺仪</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

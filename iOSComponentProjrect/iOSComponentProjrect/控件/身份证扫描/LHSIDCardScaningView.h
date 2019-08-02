@@ -10,5 +10,7 @@
 @interface LHSIDCardScaningView : UIView
 
 @property (nonatomic,assign) CGRect facePathRect;
+@property (nonatomic,assign) CGRect cardPathRect;
+
 
 @end

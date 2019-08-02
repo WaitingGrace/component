@@ -14,7 +14,7 @@
 #define iPhone6or6sor7 ([UIScreen mainScreen].bounds.size.height == 667.0)
 
 // iPhone6 Plus/6s Plus/7 Plus 5.5英寸 屏幕宽高：414*736点 屏幕模式：3x 分辨率：1920*1080像素
-#define iPhone6Plusor6sPlusor7Plus ([UIScreen mainScreen].bounds.size.height == 736.0)
+#define iPhone6Plus ([UIScreen mainScreen].bounds.size.height == 736.0)
 
 @interface LHSIDCardScaningView () {
     CAShapeLayer *_IDCardScanningWindowLayer;
@@ -71,6 +71,7 @@
     CGFloat facePathHeight = facePathWidth * 0.812;
     CGRect rect = _IDCardScanningWindowLayer.frame;
     self.facePathRect = (CGRect){CGRectGetMaxX(rect) - facePathWidth - 35,CGRectGetMaxY(rect) - facePathHeight - 25,facePathWidth,facePathHeight};
+    self.cardPathRect = _IDCardScanningWindowLayer.frame;
     
     // 提示标签
     CGPoint center = self.center;

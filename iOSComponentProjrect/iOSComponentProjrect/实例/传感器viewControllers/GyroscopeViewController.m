@@ -20,10 +20,23 @@
 
 @property (nonatomic, strong) CMPedometer *stepCounter;
 
+@property (nonatomic, strong) UILabel * textLabel;
 @end
 
 @implementation GyroscopeViewController
 
+- (UILabel *)textLabel{
+    if (_textLabel == nil) {
+        _textLabel = [[UILabel alloc]init];
+        _textLabel.frame = CGRectMake(20, 120, SCREEN_WIDTH-40, 100);
+        _textLabel.textColor = [UIColor blackColor];
+        _textLabel.textAlignment = NSTextAlignmentCenter;
+        _textLabel.font = [UIFont systemFontOfSize:16.f];
+        _textLabel.text = @"我们一起来摇一摇";
+        
+    }
+    return _textLabel;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -35,6 +48,9 @@
     
     
     [self createPedometer];
+    [self.view addSubview:self.textLabel];
+    
+//    [self createGyroscope];
 }
 
 
@@ -42,7 +58,7 @@
     
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4, SCREEN_HEIGHT/2 + 60, SCREEN_WIDTH/2, 250)];
     
-    imageView2.image = [UIImage imageNamed:@"qiaoba.jpeg"];
+    imageView2.image = [UIImage imageNamed:@"image_1"];
     [self.view addSubview:imageView2];
     
     
@@ -70,14 +86,17 @@
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     NSLog(@"开始摇了，坐稳咯");
+    self.textLabel.text = @"开始摇了，坐稳咯";
 }
 
 -  (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     NSLog(@"不摇了，你走吧");
+    self.textLabel.text = @"不摇了，你走吧";
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
     NSLog(@"摇完了，下车吧");
+    self.textLabel.text = @"摇完了，下车吧";
 }
 
 #pragma mark -- 计步器
@@ -86,6 +105,7 @@
     // 1.判断计步器是否可用
     if (![CMPedometer isStepCountingAvailable] && ![CMPedometer isDistanceAvailable]) {
         NSLog(@"记步功能不可用");
+        self.textLabel.text = @"记步功能不可用";
         return;
     }
     
@@ -102,6 +122,9 @@
         }
         
         NSLog(@"您一共走了%@步  %@米", pedometerData.numberOfSteps, pedometerData.distance);
+        dispatch_sync(dispatch_get_main_queue(), ^{
+             self.textLabel.text = [NSString stringWithFormat:@"您一共走了%@步  %@米", pedometerData.numberOfSteps, pedometerData.distance];
+        });
     }];
     
     //根据开始和结束时间查询行走相关信息

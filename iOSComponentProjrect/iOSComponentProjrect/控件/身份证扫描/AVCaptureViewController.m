@@ -186,6 +186,17 @@
         });
     }
 }
+#pragma mark - 手电筒开关
+- (UIButton *)torchBtn{
+    if (_torchBtn == nil) {
+        _torchBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_torchBtn setBackgroundColor:[UIColor clearColor]];
+        [_torchBtn setImage:[UIImage imageNamed:@"nav_torch_on"] forState:(UIControlStateSelected)];
+        [_torchBtn setImage:[UIImage imageNamed:@"nav_torch_off"] forState:(UIControlStateNormal)];
+        [_torchBtn addTarget:self action:@selector(turnOnOrOffTorch) forControlEvents:(UIControlEventTouchUpInside)];
+    }
+    return _torchBtn;
+}
 #pragma mark - 打开／关闭手电筒
 -(void)turnOnOrOffTorch {
     self.torchOn = !self.isTorchOn;
@@ -206,24 +217,22 @@
 }
 
 #pragma mark - view即将出现时
+
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.view.backgroundColor = [UIColor blackColor];
     // 每次展现AVCaptureViewController的界面时，都检查摄像头使用权限
     [self checkAuthorizationStatus];
     self.torchOn = NO;
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 #pragma mark - view即将消失时
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    self.torchBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [self.torchBtn setImage:[UIImage imageNamed:@"nav_torch_on"] forState:(UIControlStateSelected)];
-    [self.torchBtn setImage:[UIImage imageNamed:@"nav_torch_off"] forState:(UIControlStateNormal)];
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.torchBtn];
-    self.navigationController.navigationItem.rightBarButtonItem = rightItem;
-    
+    self.navigationController.navigationBar.hidden = NO;
     [self stopSession];
+    
 }
 
 - (void)viewDidLoad {
@@ -242,8 +251,15 @@
     [self.view addSubview:IDCardScaningView];
     // 添加关闭按钮
     [self addCloseButton];
+    CGRect frame = IDCardScaningView.cardPathRect;
+    CGFloat torch_x = frame.origin.x - 40;
+    CGFloat torch_y = frame.origin.y + frame.size.height/2;
+    NSLog(@"%f,%f,%f,%f",torch_x,torch_y,CGRectGetMaxX(frame),CGRectGetMaxY(frame));
+    self.torchBtn.frame = CGRectMake(torch_x, torch_y, 30, 30);
+    [self.view addSubview:self.torchBtn];
     self.view.backgroundColor = [UIColor clearColor];
 }
+
 #pragma mark - 添加关闭按钮
 -(void)addCloseButton {
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -289,7 +305,12 @@
     NSString *message = @"请到系统的“设置-隐私-相机”中授权此应用使用您的相机";
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"去设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         // 跳转到该应用的隐私设授权置界面
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+        }else{
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }
+        
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
     [self alertControllerWithTitle:title message:message okAction:okAction cancelAction:cancelAction];

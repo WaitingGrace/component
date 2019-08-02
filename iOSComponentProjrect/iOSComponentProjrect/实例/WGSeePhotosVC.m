@@ -59,9 +59,8 @@
         headerView.endDate = self.endDate;
         headerView.type = self.adviceType;
         @WeakObj(self)
-        UIWindow *window =[UIApplication sharedApplication].windows.lastObject;
-        CGPoint point = [window convertPoint:self.point fromView:self.view];
-        self.dropView =[[WGDorpView alloc]initWithTitleArray:self.typeArray orignPoint:point listWidth:ScreenWidth/5 selectResult:^(NSInteger index) {
+    
+        self.dropView =[[WGDorpView alloc]initWithTitleArray:self.typeArray orignPoint:self.point listWidth:ScreenWidth/5 selectResult:^(NSInteger index) {
             selfWeak.adviceType = selfWeak.typeArray[index];
             selfWeak.headerView.type = selfWeak.adviceType;
             [selfWeak setupUrlIamgeView:index*2+2];
@@ -108,8 +107,8 @@
     }];
     
     self.urlArray = @[@"https://b-ssl.duitang.com/uploads/item/201509/28/20150928210046_inFK8.thumb.700_0.jpeg",   @"https://b-ssl.duitang.com/uploads/item/201509/05/20150905171102_CtiFP.thumb.700_0.jpeg", @"https://b-ssl.duitang.com/uploads/item/201501/28/20150128185302_vsStm.jpeg", @"https://b-ssl.duitang.com/uploads/item/201212/08/20121208100105_BNeFR.jpeg", @"https://b-ssl.duitang.com/uploads/item/201407/23/20140723004156_cwjLY.png", @"https://b-ssl.duitang.com/uploads/item/201603/23/20160323130734_FLESm.jpeg", @"https://b-ssl.duitang.com/uploads/item/201605/14/20160514144257_BNrhx.thumb.700_0.jpeg", @"https://b-ssl.duitang.com/uploads/item/201410/16/20141016221043_SvUrz.thumb.700_0.jpeg",
-                      @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557151384084&di=7fefdbfe0688b3251f5b437fe3e0aba7&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201506%2F10%2F20150610135129_XmwE5.jpeg",
-                      @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557151302116&di=c1bf43c0e9e1a1b80e4b618f2595ceac&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fac345982b2b7d0a26b8f368ac9ef76094b369a66.jpg",
+//                      @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557151384084&di=7fefdbfe0688b3251f5b437fe3e0aba7&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201506%2F10%2F20150610135129_XmwE5.jpeg",
+                     @"https://c-ssl.duitang.com/uploads/item/201803/09/20180309094306_S3vXe.gif", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557151302116&di=c1bf43c0e9e1a1b80e4b618f2595ceac&imgtype=0&src=http%3A%2F%2Fh.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fac345982b2b7d0a26b8f368ac9ef76094b369a66.jpg",
                       @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557151277535&di=46f10e19bd80f07c5d93d3f892ade15f&imgtype=0&src=http%3A%2F%2Fimg1.xiazaizhijia.com%2Fwalls%2F20160307%2Fmid_77279b645bf4ec3.jpg",
                       @"http://b-ssl.duitang.com/uploads/item/201610/15/20161015160708_aCdRc.jpeg"];
     self.urlIamgeView = [[UIView alloc]init];

@@ -29,13 +29,13 @@
     self.navigationItem.title = @"运动传感器 手机水平位置测试";
     
     UIImageView * imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4, 70, SCREEN_WIDTH/2, 250)];
-    imageView1.image = [UIImage imageNamed:@"qiaoba.jpeg"];
+    imageView1.image = [UIImage imageNamed:@"image_1"];
     [self.view addSubview:imageView1];
     
     
     UIImageView * imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/4, SCREEN_HEIGHT/2 + 60, SCREEN_WIDTH/2, 250)];
     
-    imageView2.image = [UIImage imageNamed:@"qiaoba.jpeg"];
+    imageView2.image = [UIImage imageNamed:@"image_1"];
     [self.view addSubview:imageView2];
 
     

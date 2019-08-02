@@ -16,7 +16,7 @@
 #define kBottomViewTag 10
 #define kBottomViewHeight 50
 #define kCancleViewWidth 28
-#define kMaxPopMenuItemColumn 4
+#define kMaxPopMenuItemColumn (iPad ? 6 :4)
 #define kPopMenuItemWidth Width/kMaxPopMenuItemColumn
 #define kPopMenuItemHeight kPopMenuItemWidth
 #define kBasePopMenuTag 200
@@ -184,9 +184,8 @@
         [self startTheAnimationFromValue:fromValue toValue:toValue delay:delayInSeconds object:button alpha:1 completionBlock:^(BOOL complete) {
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                                   action:@selector(dismiss)];
-            [_blurView addGestureRecognizer:tap];
+            [self->_blurView addGestureRecognizer:tap];
         } hideDisplay:false];
-        
         index ++;
     }
 }
@@ -241,7 +240,7 @@
         double delayInSeconds = (_items.count - index) * kInterval;
         
         [UIView animateWithDuration:0.2 animations:^{
-            [_bottomView setBackgroundColor:[UIColor clearColor]];
+            [self->_bottomView setBackgroundColor:[UIColor clearColor]];
         }];
         
         [self startTheAnimationFromValue:fromValue toValue:toValue delay:delayInSeconds object:button alpha:0 completionBlock:^(BOOL complete) {
