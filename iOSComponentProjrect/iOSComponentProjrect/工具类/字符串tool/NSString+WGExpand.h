@@ -74,6 +74,13 @@
  */
 + (NSString *)checkUserName:(NSString *)userName;
 /**
+ 用户名判断 (3-20 字母、数字、非单一数字，非相同字母)
+ 
+ @param name 名称
+ @return 校验结果
+ */
++ (NSString *)judgeUserNameLegal:(NSString *)name;
+/**
  是否包换emoji
  
  @param string 原始str

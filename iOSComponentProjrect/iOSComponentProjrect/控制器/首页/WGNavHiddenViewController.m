@@ -18,6 +18,9 @@
 #import "WGDraggableVC.h"
 #import "WGGreetingCardVC.h"
 #import "WGTheSignatureView.h"
+#import "WGAreaPickerVC.h"
+#import "WGRadarViewController.h"
+#import "WGTwoWayFormVC.h"
 
 @interface WGNavHiddenViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView * tableView;
@@ -46,7 +49,7 @@
     self.tableView.rowHeight = 80;
     [self setKeyScrollView:self.tableView scrolOffsetY:60.f options:WGHidenControlOptionTitle];
     
-    self.titlesArray = @[@"gif加载",@"卡片选择",@"生日贺卡（三种样式随机显示",@"手写签名"];
+    self.titlesArray = @[@"gif加载",@"卡片选择",@"生日贺卡（三种样式随机显示",@"手写签名",@"地区选择（省市县乡）",@"多边雷达图",@"纵横表格视图",@"xxx",@"xxx",@"xxx",@"xxx"];
     [self.view addSubview:self.tableView];
     
 }
@@ -142,7 +145,7 @@
 
             }
                 break;
-                case 2:
+            case 2:
             {
                 WGDetailsNoPagingVC *view2VC = [[WGDetailsNoPagingVC alloc]init];
                 [self toTargetController:(UIViewController *)view2VC];
@@ -181,17 +184,20 @@
                 break;
             case 4:
             {
-                
+                WGAreaPickerVC * pickerVC = [[WGAreaPickerVC alloc]init];
+                [self toTargetController:(UIViewController *)pickerVC];
             }
                 break;
             case 5:
             {
-               
+                WGRadarViewController *radarVC = [[WGRadarViewController alloc]init];
+                [self toTargetController:(UIViewController *)radarVC];
             }
                 break;
             case 6:
             {
-                
+                WGTwoWayFormVC * formVC = [[WGTwoWayFormVC alloc]init];
+                [self toTargetController:(UIViewController *)formVC];
             }
                 break;
             case 7:

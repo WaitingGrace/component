@@ -14,5 +14,6 @@ pod 'Masonry'
 pod 'TZImagePickerController'
 pod 'YBImageBrowser'
 pod 'MJRefresh'
+pod 'YYModel'
 
 end

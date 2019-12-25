@@ -43,7 +43,7 @@ typedef void(^WGMonitorLightBlock)( float brightness);
  @param preview 展示输出流的视图
  @param scanFrame 扫描中心识别区域范围
  */
-- (instancetype )initWithPreview:(UIView *)preview andScanFrame:(CGRect)scanFrame;
+- (instancetype _Nullable )initWithPreview:(UIView *_Nullable)preview andScanFrame:(CGRect)scanFrame;
 
 /**
  闪光灯开关
@@ -69,6 +69,6 @@ typedef void(^WGMonitorLightBlock)( float brightness);
  @param centerImage 中心图片
  @return image二维码
  */
-+ (UIImage *)createQRCodeImageWithString:(nonnull NSString *)codeString andSize:(CGSize)size andBackColor:(nullable UIColor *)backColor andFrontColor:(nullable UIColor *)frontColor andCenterImage:(nullable UIImage *)centerImage;
++ (UIImage *_Nullable)createQRCodeImageWithString:(nonnull NSString *)codeString andSize:(CGSize)size andBackColor:(nullable UIColor *)backColor andFrontColor:(nullable UIColor *)frontColor andCenterImage:(nullable UIImage *)centerImage;
 
 @end

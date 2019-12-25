@@ -113,30 +113,32 @@
         
         /**
          移动号段：
-         134 135 136 137 138 139 147 150 151 152 157 158 159 172 178 182 183 184 187 188 198
+         134 135 136 137 138 139 147 150 151 152 157 158 159 172 178 182 183 184 187 188 197 198
          联通号段：
-         130 131 132 145 155 156 166 171 175 176 185 186
+         130 131 132 145 155 156 166 171 175 176 185 186 196
          电信号段：
-         133 149 153 173 177 180 181 189 199
+         133 149 153 173 177 180 181 189 190 199
          虚拟运营商:
-         170
+         170,171,167
+         广电号段:
+         192
          */
         /**
          * 移动号段正则表达式
          */
-        NSString *CM_NUM = @"^((13[4-9])|(147)|(15[0-2,7-9])|(17[2,8])|(18[2-4,7-8])|(198))\\d{8}|(1705)\\d{7}$";
+        NSString *CM_NUM = @"^((13[4-9])|(147)|(15[0-2,7-9])|(17[2,8])|(18[2-4,7-8])|(19[7,8]))\\d{8}|(1705)\\d{7}$";
         /**
          * 联通号段正则表达式
          */
-        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(166)|(17[1,5,6])|(18[5,6]))\\d{8}|(1709)\\d{7}$";
+        NSString *CU_NUM = @"^((13[0-2])|(145)|(15[5-6])|(166)|(17[1,5,6])|(18[5,6])|(196))\\d{8}|(1709)\\d{7}$";
         /**
          * 电信号段正则表达式
          */
-        NSString *CT_NUM = @"^((133)|(149)|(153)|(17[3,7])|(18[0,1,9])|(199))\\d{8}|(^1700\\d{7}$)";
+        NSString *CT_NUM = @"^((133)|(149)|(153)|(17[3,7])|(18[0,1,9])|(19[0,9]))\\d{8}|(1700)\\d{7}$)";
         /**
          * 虚拟运营商号段正则表达式
          */
-        NSString *VNO_NUM = @"^170\\d{7}$";
+        NSString *VNO_NUM = @"^(170[0-9])\\d{7}|(167)\\d{8}$";
         
         NSPredicate *pred1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM_NUM];
         BOOL isMatch1 = [pred1 evaluateWithObject:mobile];
@@ -333,6 +335,47 @@
     return @"昵称只能是汉字或英文字母哦!!!";
 }
 
+/**
+ 用户名判断
+
+ @param name 名称
+ @return 校验结果
+ */
++ (NSString *)judgeUserNameLegal:(NSString *)name{
+    if (name.length <= 3) {
+        return @"您的用户名太短了，请保持在3位以上！！！";
+    }
+    if (name.length >= 20) {
+        return @"您的用户名太长了，请保持在20位以内！！！";
+    }
+    NSRegularExpression * tNumRegularExpression = [NSRegularExpression regularExpressionWithPattern:@"[0-9]" options:NSRegularExpressionCaseInsensitive error:nil];
+    //符合数字条件的有几个字节
+    NSUInteger tNumMatchCount = [tNumRegularExpression numberOfMatchesInString:name options:NSMatchingReportProgress range:NSMakeRange(0, name.length)];
+    //英文字条件
+    NSRegularExpression * tLetterRegularExpression = [NSRegularExpression regularExpressionWithPattern:@"[A-Za-z]" options:NSRegularExpressionCaseInsensitive error:nil];
+    //符合英文字条件的有几个字节
+    NSUInteger tLetterMatchCount = [tLetterRegularExpression numberOfMatchesInString:name options:NSMatchingReportProgress range:NSMakeRange(0, name.length)];
+    
+    if(tNumMatchCount == name.length) {
+        return @"用户名不能是纯数字";
+    }else if(tLetterMatchCount == name.length) {
+        //全部符合英文，表示沒有数字
+        NSString * firstCharacter = [name substringToIndex:1];
+        NSString * nameStr = name;
+        NSInteger count = [[nameStr mutableCopy] replaceOccurrencesOfString:firstCharacter
+                                                                 withString:@"A"//用以替换的字符，任意
+                                                                    options:NSLiteralSearch
+                                                                      range:NSMakeRange(0, [nameStr length])];
+        if (count == name.length) {
+            return @"用户名不能是单一字母";
+        }
+        return @"200";
+    }else if(tNumMatchCount + tLetterMatchCount == name.length) {
+        return @"200";
+    }else{
+        return @"用户名不能包含非字母或数字的字符";
+    }
+}
 /**
  判断字符串是否包含emoji
 

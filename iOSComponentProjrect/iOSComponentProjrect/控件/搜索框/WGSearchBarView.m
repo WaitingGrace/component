@@ -43,8 +43,14 @@
 }
 #pragma mark ---  视图设置
 - (void)setInitView{
-    self.searchBar.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+
+#warning mark ---- 需设置layout布局
     [self addSubview:self.searchBar];
+//    [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.mas_equalTo(0);
+//        make.top.mas_equalTo(0);
+//        make.bottom.mas_equalTo(0);
+//    }];
     
 }
 #pragma mark --- UISearchBar deleagete
