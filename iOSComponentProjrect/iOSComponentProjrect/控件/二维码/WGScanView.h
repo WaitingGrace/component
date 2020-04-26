@@ -14,12 +14,12 @@ typedef void(^WGFlashSwitchBlock)(BOOL open);
 /**
  点击我的二维码的回调
  */
-@property (nonatomic,copy) WGMyQRCodeBlock myQRCodeBlock;
+@property (nonatomic,copy) WGMyQRCodeBlock _Nullable myQRCodeBlock;
 
 /**
  打开/关闭闪光灯的回调
  */
-@property (nonatomic,copy) WGFlashSwitchBlock flashSwitchBlock;
+@property (nonatomic,copy) WGFlashSwitchBlock _Nullable flashSwitchBlock;
 
 #pragma mark - 扫码区域
 

@@ -208,7 +208,7 @@ static dispatch_once_t onceToken;
 
 - (void)dealloc{
     //  获取 和 remove
-    NSArray *boundarys = self.collision.boundaryIdentifiers;
+//    NSArray *boundarys = self.collision.boundaryIdentifiers;
     [self.collision removeAllBoundaries];
 }
 

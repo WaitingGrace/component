@@ -3128,6 +3128,7 @@
 		8FC5248A229E668600C12A47 /* WGOperationLoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52488229E668600C12A47 /* WGOperationLoadingHUD.m */; };
 		8FC52494229E852400C12A47 /* WGSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC52490229E852300C12A47 /* WGSphereView.m */; };
 		8FC5249C229E866400C12A47 /* WGSphereMarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */; };
+		8FCFAD0624557C9C00A1E5BF /* UIColor+WGPickupColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCFAD0524557C9C00A1E5BF /* UIColor+WGPickupColor.m */; };
 		8FD9739722EE8F4B004D496E /* WGFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9739622EE8F4B004D496E /* WGFileManager.m */; };
 		8FD9C58322954D700081B703 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58022954D700081B703 /* UIImage+ImageEffects.m */; };
 		8FD9C58422954D700081B703 /* WGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FD9C58222954D700081B703 /* WGActionSheet.m */; };
@@ -6492,6 +6493,8 @@
 		8FC52493229E852400C12A47 /* WGMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGMatrix.h; sourceTree = "<group>"; };
 		8FC5249A229E866400C12A47 /* WGSphereMarkVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGSphereMarkVC.h; sourceTree = "<group>"; };
 		8FC5249B229E866400C12A47 /* WGSphereMarkVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGSphereMarkVC.m; sourceTree = "<group>"; };
+		8FCFAD0424557C9C00A1E5BF /* UIColor+WGPickupColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+WGPickupColor.h"; sourceTree = "<group>"; };
+		8FCFAD0524557C9C00A1E5BF /* UIColor+WGPickupColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+WGPickupColor.m"; sourceTree = "<group>"; };
 		8FD9739522EE8F4B004D496E /* WGFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGFileManager.h; sourceTree = "<group>"; };
 		8FD9739622EE8F4B004D496E /* WGFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGFileManager.m; sourceTree = "<group>"; };
 		8FD9C57F22954D6F0081B703 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -10759,6 +10762,15 @@
 			name = "球体标签";
 			sourceTree = "<group>";
 		};
+		8FCFAD0324557C2800A1E5BF /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				8FCFAD0424557C9C00A1E5BF /* UIColor+WGPickupColor.h */,
+				8FCFAD0524557C9C00A1E5BF /* UIColor+WGPickupColor.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		8FD9739422EE8F3F004D496E /* 本地文件操作 */ = {
 			isa = PBXGroup;
 			children = (
@@ -10971,6 +10983,7 @@
 		8FF86A8A21A6AB2500C95EA4 /* 工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				8FCFAD0324557C2800A1E5BF /* Color */,
 				8FD9739422EE8F3F004D496E /* 本地文件操作 */,
 				8FC52479229E304E00C12A47 /* 排序算法 */,
 				8F99E39C228E972700948BAC /* 崩溃定位 */,
@@ -11051,7 +11064,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = WG;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = WG;
 				TargetAttributes = {
 					8F89AF5821A54C1800A811F9 = {
@@ -14121,6 +14134,7 @@
 				8F057CF222A521D50045A4D0 /* GyroscopeViewController.m in Sources */,
 				8F974D1D22A0CE3D00844BD8 /* WGGreetingCardVC.m in Sources */,
 				8FC068FE228161F0007991FD /* WGHourModel.m in Sources */,
+				8FCFAD0624557C9C00A1E5BF /* UIColor+WGPickupColor.m in Sources */,
 				8F57B347228D6D3E001EB6BA /* WGDropMenuFilterSectionHeader.m in Sources */,
 				8FA8E34B21B0E8020099F088 /* UIImage+Tint.m in Sources */,
 				8F99E3B1228EAC0600948BAC /* WGProjrectViewController.m in Sources */,

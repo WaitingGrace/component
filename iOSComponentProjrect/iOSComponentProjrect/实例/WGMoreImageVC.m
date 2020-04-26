@@ -156,7 +156,13 @@
         // 无相机权限 做一个友好的提示
         [WGPromptBoxView popUpOptionPromptBoxWithTitle:@"无法使用相机" message:String(@"请在iPhone的""设置-隐私-相机""中允许访问相机") controllerStyle:UIAlertControllerStyleAlert action:@[@"设置"] style:@[@(UIAlertActionStyleDefault)] cancle:String(@"取消") cancleStyle:UIAlertActionStyleCancel block:^(NSInteger btnTag) {
             // 去设置界面，开启相机访问权限
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            if (@available(iOS 10.0, *)) {
+                       
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+            }else{
+                       
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }
         } cancleBlock:^{ }];
     } else if (authStatus == AVAuthorizationStatusNotDetermined) {
         // 防止用户首次拍照拒绝授权时相机页黑屏
@@ -171,7 +177,14 @@
     } else if ([[TZImageManager manager] authorizationStatusAuthorized] == NO) {// 已被拒绝，没有相册权限，将无法保存拍的照片
         [WGPromptBoxView popUpOptionPromptBoxWithTitle:@"无法访问相册" message:String(@"请在iPhone的""设置-隐私-相册""中允许访问相册") controllerStyle:UIAlertControllerStyleAlert action:@[@"设置"] style:@[@(UIAlertActionStyleDefault)] cancle:String(@"取消") cancleStyle:UIAlertActionStyleCancel block:^(NSInteger btnTag) {
             // 去设置界面，开启相机访问权限
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            if (@available(iOS 10.0, *)) {
+                       
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
+            }else{
+                       
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            }
+            
         } cancleBlock:^{ }];
     } else {
         [self pushImagePickerController];

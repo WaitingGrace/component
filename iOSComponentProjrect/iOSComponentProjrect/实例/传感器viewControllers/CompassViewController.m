@@ -180,7 +180,7 @@
         float magneticHeading =[self heading:newHeading.magneticHeading fromOrirntation:device.orientation];
         
         //地理航向数据-》trueHeading
-        float trueHeading =[self heading:newHeading.trueHeading fromOrirntation:device.orientation];
+//        float trueHeading =[self heading:newHeading.trueHeading fromOrirntation:device.orientation];
         
         //地磁北方向
         float heading = -1.0f *M_PI *newHeading.magneticHeading /180.0f;
