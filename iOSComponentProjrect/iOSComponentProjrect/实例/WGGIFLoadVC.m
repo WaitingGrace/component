@@ -25,6 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     NSInteger idx = arc4random()%4;
+    
     switch (idx) {
         case 0:
         {
@@ -71,7 +72,7 @@
 }
 -(void)loadGIFWithCGImage
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"timg-2" ofType:@"gif"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"timg" ofType:@"gif"];
     gifView = [[WGCGImageGIFView alloc] initWithGIFPath:path];
     gifView.frame = CGRectMake(0, 0, 200, 200);
     [gifView setCenter:self.view.center];
@@ -80,7 +81,7 @@
 }
 -(void)loadCAKeyframeAnimation
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"timg" ofType:@"gif"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"timg-2" ofType:@"gif"];
     otherGifView = [[WGCAKeyframeAnimationGIFView alloc] initWithCAKeyframeAnimationWithPath:path];
     otherGifView.frame = CGRectMake(0, 0, 200, 200);
     otherGifView.center = self.view.center;

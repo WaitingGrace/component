@@ -74,6 +74,7 @@
 		8F6CBCDA2293A68400E4F040 /* HcdLoaderURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBCD02293A68300E4F040 /* HcdLoaderURLConnection.m */; };
 		8F6CBCDB2293A68400E4F040 /* HcdVideoRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBCD22293A68400E4F040 /* HcdVideoRequestTask.m */; };
 		8F6CBCDF2293D2E000E4F040 /* WGVideoPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CBCDE2293D2E000E4F040 /* WGVideoPlayerVC.m */; };
+		8F6D31A92457D0560001752A /* main_sucess.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8F6D31A82457D0550001752A /* main_sucess.gif */; };
 		8F7617BF228044D30099566C /* WGDorpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617BE228044D30099566C /* WGDorpView.m */; };
 		8F7617C2228044E90099566C /* WGDropListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617C1228044E90099566C /* WGDropListCell.m */; };
 		8F7617C5228048A10099566C /* WGHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F7617C4228048A10099566C /* WGHeaderView.m */; };
@@ -3276,6 +3277,7 @@
 		8F6CBCD22293A68400E4F040 /* HcdVideoRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HcdVideoRequestTask.m; sourceTree = "<group>"; };
 		8F6CBCDD2293D2E000E4F040 /* WGVideoPlayerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGVideoPlayerVC.h; sourceTree = "<group>"; };
 		8F6CBCDE2293D2E000E4F040 /* WGVideoPlayerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGVideoPlayerVC.m; sourceTree = "<group>"; };
+		8F6D31A82457D0550001752A /* main_sucess.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = main_sucess.gif; sourceTree = "<group>"; };
 		8F7617BD228044D30099566C /* WGDorpView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGDorpView.h; sourceTree = "<group>"; };
 		8F7617BE228044D30099566C /* WGDorpView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGDorpView.m; sourceTree = "<group>"; };
 		8F7617C0228044E90099566C /* WGDropListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGDropListCell.h; sourceTree = "<group>"; };
@@ -7131,6 +7133,7 @@
 		8F964129229FC63D001AFE30 /* gif加载图 */ = {
 			isa = PBXGroup;
 			children = (
+				8F6D31A82457D0550001752A /* main_sucess.gif */,
 				8F96412C229FC653001AFE30 /* WGCGImageGIFView.h */,
 				8F96412B229FC652001AFE30 /* WGCGImageGIFView.m */,
 				8F96412A229FC652001AFE30 /* WGCAKeyframeAnimationGIFView.h */,
@@ -11989,6 +11992,7 @@
 				8FB78F4D233F448400B91C89 /* KYDivisionPickerView_441802.json in Resources */,
 				8FB78E22233F448400B91C89 /* KYDivisionPickerView_130627.json in Resources */,
 				8FB78DCC233F448400B91C89 /* KYDivisionPickerView_210682.json in Resources */,
+				8F6D31A92457D0560001752A /* main_sucess.gif in Resources */,
 				8FB78AF4233F448200B91C89 /* KYDivisionPickerView_440783.json in Resources */,
 				8FB78AAF233F448200B91C89 /* KYDivisionPickerView_131122.json in Resources */,
 				8FB78F28233F448400B91C89 /* KYDivisionPickerView_350428.json in Resources */,
