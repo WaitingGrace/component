@@ -34,8 +34,7 @@
     AFHttpClient * manager = [AFHttpClient sharedClient];
     NSSet *set = [NSSet setWithObject:@"text/html"];
     [manager.responseSerializer setAcceptableContentTypes:set];
-    
-    [manager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success == nil) return;
         NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
         if (response.statusCode == 200){
@@ -66,9 +65,7 @@
     AFHttpClient * manager = [AFHttpClient sharedClient];
     manager.requestSerializer.timeoutInterval = 30;
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-
-
-    [manager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString * result = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         if (success && result) {
             success(result);
@@ -179,7 +176,7 @@
     AFHttpClient *manager = [AFHttpClient sharedClient];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
 
-    [manager GET:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
         if (response.statusCode == 200){
             if (success ) {
@@ -197,13 +194,14 @@
             failure([self returnErrorWithError:error]);
         }
     }];
+
 }
 
 #pragma mark === GET请求 返回html
 + (void)GETWithPath:(NSString *)path params:(NSDictionary *)params success:(HttpSuccessBlock)success failure:(HttpFailureBlock)failure{
     AFHttpClient *manager = [AFHttpClient sharedClient];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
         NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
         if (response.statusCode == 200){
             if (success ) {
@@ -232,7 +230,7 @@
     AFHttpClient * manager = [AFHttpClient sharedClient];
     NSSet *set = [NSSet setWithObject:@"text/html"];
     [manager.responseSerializer setAcceptableContentTypes:set];
-    [manager POST:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)  {
         if (success == nil) return;
         NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
         if (response.statusCode == 200){
@@ -260,7 +258,7 @@
     AFHttpClient *manager = [AFHttpClient sharedClient];
     NSSet *set = [NSSet setWithObject:@"text/html"];
     [manager.responseSerializer setAcceptableContentTypes:set];
-    [manager GET:path parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:path parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject){
         NSHTTPURLResponse * response = (NSHTTPURLResponse *)task.response;
         if (response.statusCode == 200){
             if (success ) {

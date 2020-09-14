@@ -32,6 +32,7 @@
 #import "WGOtherViewController.h"
 #import "WGSphereMarkVC.h"
 
+
 @interface ViewController ()<WGOutputViewDelegate ,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic ,strong) UITableView * tableView;
 @property (nonatomic ,strong) WGOutPutView  * popView;
@@ -83,6 +84,8 @@
     [self launchAnimation];
     NSArray * images = @[@"image_1",@"image_2",@"image_3",@"image_4",@"image_5",@"image_6"];
     [WGGuideView showGudieView:images];
+    
+    
     
     [self.view addSubview:self.tableView];
     UIImage *maskImage = [UIImage imageNamed:@"btn_link_fill"];

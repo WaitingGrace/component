@@ -196,6 +196,7 @@
 		8F99E3B1228EAC0600948BAC /* WGProjrectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B0228EAC0600948BAC /* WGProjrectViewController.m */; };
 		8F99E3B4228EAC1300948BAC /* WGCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B3228EAC1300948BAC /* WGCartViewController.m */; };
 		8F99E3B7228EB74600948BAC /* WGNavHiddenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */; };
+		8F9D63C624F8FE840004AE30 /* SwiftConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D63C524F8FE840004AE30 /* SwiftConfig.swift */; };
 		8F9E5C2F22BC7D7E00081E0F /* 指纹解锁.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F9E5C2E22BC7D7D00081E0F /* 指纹解锁.png */; };
 		8FA79653229BD4060015EEAE /* WGBubbleDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA79650229BD4060015EEAE /* WGBubbleDelegate.m */; };
 		8FA79654229BD4060015EEAE /* WGBubbleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA79651229BD4060015EEAE /* WGBubbleViewController.m */; };
@@ -3150,6 +3151,8 @@
 		8FDAB917224C7C0000C38B0E /* WGImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB916224C7C0000C38B0E /* WGImageItem.m */; };
 		8FDAB91D224CBA6B00C38B0E /* WGTackImgaeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB919224CBA6A00C38B0E /* WGTackImgaeView.m */; };
 		8FDAB91E224CBA6B00C38B0E /* WGCropImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FDAB91B224CBA6B00C38B0E /* WGCropImageVC.m */; };
+		8FE1240E24E63B71006906EC /* NSCoder+WGCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1240D24E63B71006906EC /* NSCoder+WGCoder.m */; };
+		8FE1241124E66D32006906EC /* WGPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE1241024E66D32006906EC /* WGPerson.m */; };
 		8FE67B9822F3D49F003E7518 /* idcard_first_head.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9722F3D49F003E7518 /* idcard_first_head.png */; };
 		8FE67B9A22F3D4A9003E7518 /* nav_torch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9922F3D4A9003E7518 /* nav_torch_off.png */; };
 		8FE67B9C22F3D4B1003E7518 /* nav_torch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FE67B9B22F3D4B1003E7518 /* nav_torch_on.png */; };
@@ -3499,7 +3502,9 @@
 		8F99E3B3228EAC1300948BAC /* WGCartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGCartViewController.m; sourceTree = "<group>"; };
 		8F99E3B5228EB74600948BAC /* WGNavHiddenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGNavHiddenViewController.h; sourceTree = "<group>"; };
 		8F99E3B6228EB74600948BAC /* WGNavHiddenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGNavHiddenViewController.m; sourceTree = "<group>"; };
+		8F9D63C524F8FE840004AE30 /* SwiftConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftConfig.swift; sourceTree = "<group>"; };
 		8F9E5C2E22BC7D7D00081E0F /* 指纹解锁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "指纹解锁.png"; sourceTree = "<group>"; };
+		8FA3CEA5250F074E0015804B /* iOSComponentProjrect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSComponentProjrect-Bridging-Header.h"; sourceTree = "<group>"; };
 		8FA7964F229BD4060015EEAE /* WGBubbleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGBubbleViewController.h; sourceTree = "<group>"; };
 		8FA79650229BD4060015EEAE /* WGBubbleDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBubbleDelegate.m; sourceTree = "<group>"; };
 		8FA79651229BD4060015EEAE /* WGBubbleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGBubbleViewController.m; sourceTree = "<group>"; };
@@ -6536,6 +6541,10 @@
 		8FDAB91A224CBA6A00C38B0E /* WGCropImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGCropImageVC.h; sourceTree = "<group>"; };
 		8FDAB91B224CBA6B00C38B0E /* WGCropImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGCropImageVC.m; sourceTree = "<group>"; };
 		8FDAB91C224CBA6B00C38B0E /* WGTackImgaeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGTackImgaeView.h; sourceTree = "<group>"; };
+		8FE1240C24E63B71006906EC /* NSCoder+WGCoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCoder+WGCoder.h"; sourceTree = "<group>"; };
+		8FE1240D24E63B71006906EC /* NSCoder+WGCoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCoder+WGCoder.m"; sourceTree = "<group>"; };
+		8FE1240F24E66D32006906EC /* WGPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WGPerson.h; sourceTree = "<group>"; };
+		8FE1241024E66D32006906EC /* WGPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WGPerson.m; sourceTree = "<group>"; };
 		8FE67B9722F3D49F003E7518 /* idcard_first_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = idcard_first_head.png; sourceTree = "<group>"; };
 		8FE67B9922F3D4A9003E7518 /* nav_torch_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_torch_off.png; sourceTree = "<group>"; };
 		8FE67B9B22F3D4B1003E7518 /* nav_torch_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_torch_on.png; sourceTree = "<group>"; };
@@ -6975,6 +6984,8 @@
 				8FD9C58D229557C80081B703 /* 控制器 */,
 				8F89AF7E21A54CC400A811F9 /* PrefixHeader.pch */,
 				8F89438121AD44EF00666DD8 /* Config.h */,
+				8F9D63C524F8FE840004AE30 /* SwiftConfig.swift */,
+				8FA3CEA5250F074E0015804B /* iOSComponentProjrect-Bridging-Header.h */,
 				8F89AF6221A54C1800A811F9 /* Main.storyboard */,
 				8F89AF6521A54C1900A811F9 /* Assets.xcassets */,
 				8F964152229FDE9B001AFE30 /* qiaoba.jpeg */,
@@ -10923,6 +10934,17 @@
 			path = "图片任意裁剪";
 			sourceTree = "<group>";
 		};
+		8FE1240B24E63B29006906EC /* 序列化 */ = {
+			isa = PBXGroup;
+			children = (
+				8FE1240C24E63B71006906EC /* NSCoder+WGCoder.h */,
+				8FE1240D24E63B71006906EC /* NSCoder+WGCoder.m */,
+				8FE1240F24E66D32006906EC /* WGPerson.h */,
+				8FE1241024E66D32006906EC /* WGPerson.m */,
+			);
+			path = "序列化";
+			sourceTree = "<group>";
+		};
 		8FF4F995234DC3B40072F836 /* 带占位的textView */ = {
 			isa = PBXGroup;
 			children = (
@@ -10986,6 +11008,7 @@
 		8FF86A8A21A6AB2500C95EA4 /* 工具类 */ = {
 			isa = PBXGroup;
 			children = (
+				8FE1240B24E63B29006906EC /* 序列化 */,
 				8FCFAD0324557C2800A1E5BF /* Color */,
 				8FD9739422EE8F3F004D496E /* 本地文件操作 */,
 				8FC52479229E304E00C12A47 /* 排序算法 */,
@@ -11072,6 +11095,7 @@
 				TargetAttributes = {
 					8F89AF5821A54C1800A811F9 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1160;
 					};
 				};
 			};
@@ -14113,6 +14137,7 @@
 				8F4B0D2F2374083900F9DC10 /* WGPolygonalRadarConfig.m in Sources */,
 				8F9165502255A2480061E6B5 /* WGGuideView.m in Sources */,
 				8F99E38E228E4B6100948BAC /* WGSuspendHeader.m in Sources */,
+				8FE1241124E66D32006906EC /* WGPerson.m in Sources */,
 				8F7F9B5F2243976400661DDE /* WGNativeScanTool.m in Sources */,
 				8FC068E0228135C6007991FD /* FirstViewController.m in Sources */,
 				8F99B7DE229CC39500AD31D1 /* WGTheModalViewController.m in Sources */,
@@ -14132,6 +14157,7 @@
 				8F903BA3227FE53B002B3A1C /* WGUIAlertView.m in Sources */,
 				8F99E390228E4B6100948BAC /* WGSuspendViewController.m in Sources */,
 				8FDAB904224C6AA000C38B0E /* LHSIDCardScaningView.m in Sources */,
+				8FE1240E24E63B71006906EC /* NSCoder+WGCoder.m in Sources */,
 				8FC068E4228135C6007991FD /* SixViewController.m in Sources */,
 				8F4B0D372374089E00F9DC10 /* WGRadarViewController.m in Sources */,
 				8FA8E32721B0CB0E0099F088 /* WGSearchBar.m in Sources */,
@@ -14143,6 +14169,7 @@
 				8FA8E34B21B0E8020099F088 /* UIImage+Tint.m in Sources */,
 				8F99E3B1228EAC0600948BAC /* WGProjrectViewController.m in Sources */,
 				8F6CBCD42293A68400E4F040 /* HcdTimeSheetView.m in Sources */,
+				8F9D63C624F8FE840004AE30 /* SwiftConfig.swift in Sources */,
 				8F6CBCD62293A68400E4F040 /* HcdPlayerView.m in Sources */,
 				8FA7965A229BD8460015EEAE /* WGSpeechRecognitionVC.m in Sources */,
 				8F057CF622A521D50045A4D0 /* CompassViewController.m in Sources */,
@@ -14447,9 +14474,12 @@
 			baseConfigurationReference = 3815F53DDDB3C7E3F5170AD8 /* Pods-iOSComponentProjrect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VZ9UW9QSRK;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/iOSComponentProjrect/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSComponentProjrect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -14464,6 +14494,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyihua.iOSComponentProjrect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/iOSComponentProjrect/iOSComponentProjrect-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -14473,9 +14506,12 @@
 			baseConfigurationReference = D6BBAACCB13A8FB9D8B6B9E1 /* Pods-iOSComponentProjrect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VZ9UW9QSRK;
 				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "${SRCROOT}/iOSComponentProjrect/PrefixHeader.pch";
 				INFOPLIST_FILE = iOSComponentProjrect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -14490,6 +14526,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xinyihua.iOSComponentProjrect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/iOSComponentProjrect/iOSComponentProjrect-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -126,15 +126,15 @@
 - (void)showBrowserForSimpleCaseWithSource:(NSArray *)imagesArray Index:(NSInteger)index{
     NSMutableArray *browserDataArr = [NSMutableArray array];
     [imagesArray enumerateObjectsUsingBlock:^(NSString *_Nonnull urlStr, NSUInteger idx, BOOL * _Nonnull stop) {
-        YBImageBrowseCellData *data = [YBImageBrowseCellData new];
-        data.url = [NSURL URLWithString:urlStr];
-        data.sourceObject = [self sourceObjAtIdx:idx];
+        YBIBImageData *data = [YBIBImageData new];
+        data.imageURL = [NSURL URLWithString:urlStr];
+        data.projectiveView = [self sourceObjAtIdx:idx];
         [browserDataArr addObject:data];
     }];
     
     YBImageBrowser *browser = [YBImageBrowser new];
     browser.dataSourceArray = browserDataArr;
-    browser.currentIndex = index;
+    browser.currentPage = index;
     [browser show];
 }
 - (id)sourceObjAtIdx:(NSInteger)idx{
